@@ -8,11 +8,10 @@ namespace PokeDiaApp.ViewModel
         public static ListeViewModel Instance { get { return _instance; } }
 
         public ObservableCollection<Pokemons> MyList {
-                    get { return myList; }
-                    set { myList = value; }
+                    get { return GetValue<ObservableCollection<Pokemons>>();}
+                    set { SetValue(value); }
         }
- 
-        private ObservableCollection<Pokemons> myList;
+
 
         public ListeViewModel()
         {
@@ -21,11 +20,7 @@ namespace PokeDiaApp.ViewModel
                     for (int i = 1; i< 10; i++)
                     {
                         MyList.Add(new Pokemons() { Number = i, Name = "piplup" + i.ToString(), Type1 = "water" + i.ToString(), Type2 = "fire" + i.ToString(),Url1 = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/393.png" });
-                    }
-
-                    pokemonsList.ItemsSource = MyList;
+                    }         
         }
-
-       
     }
 }

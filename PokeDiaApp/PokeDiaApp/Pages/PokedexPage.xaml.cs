@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.ObjectModel;
+using PokeDiaApp.ViewModel;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -12,13 +13,13 @@ namespace PokeDiaApp
 
         public PokedexPage()
         {
-           
+            InitializeComponent();
+            BindingContext = ListeViewModel.Instance;
         }
 
-        async void ShowDetails(object sender, EventArgs args)
+        public async void ShowDetails(Object sender, EventArgs args)
         {
             await Navigation.PushAsync(new DetailsPage());
         }
-
     }
 }

@@ -7,7 +7,8 @@
     <ContentPage.Content>
         <StackLayout>
             <ListView x:Name="pokemonsList"
-                      HasUnevenRows="true">
+                      HasUnevenRows="true"
+                      ItemsSource="{Binding MyList}">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
