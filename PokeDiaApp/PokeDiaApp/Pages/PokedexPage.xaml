@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PokeDiaApp.PokedexPage"
+             >
+
+    <ContentPage.Content>
+        <StackLayout>
+            <ListView x:Name="pokemonsList"
+                      HasUnevenRows="true">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid Padding="10" BackgroundColor="gray">
+                                <Frame CornerRadius="180" HasShadow="true" Padding="10" BackgroundColor="LightGray">
+                                    <StackLayout Orientation="Horizontal" VerticalOptions="Center" Padding="20,0,0,0">
+                                        <StackLayout >
+                                            <Label  FontSize="Large" Text="{Binding Name}"></Label>
+                                            <StackLayout Padding="20, 0, 0, 0" Orientation="Horizontal">
+                                                <Label  FontSize="Body" FontAttributes="Bold" Text="{Binding Type1}"></Label>
+                                                <Label  FontSize="Body" FontAttributes="Bold" Text="{Binding Type2}"></Label>
+                                            </StackLayout>
+                                            <Label  FontSize="Small" FontAttributes="Bold" Text="{Binding Number}"></Label>
+                                        </StackLayout>
+                                        <StackLayout HorizontalOptions="EndAndExpand" VerticalOptions="CenterAndExpand" Padding="0,0,10,0">
+                                            <Image BackgroundColor="Gray" HeightRequest="70" WidthRequest="70" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Source="{Binding Url1}"></Image>
+                                        </StackLayout>
+                                    </StackLayout>
+                                </Frame>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <Button x:Name="detailButton"
+                                    Text="bouton de test" FontSize="Body" Clicked="ShowDetails"></Button>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

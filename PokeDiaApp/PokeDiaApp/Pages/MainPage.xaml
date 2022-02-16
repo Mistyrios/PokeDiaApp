@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Shell xmlns="http://xamarin.com/schemas/2014/forms"
+       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:pokediaapp="clr-namespace:PokeDiaApp"
+       x:Class="PokeDiaApp.MainPage">
+
+    <TabBar>
+        <ShellContent Title="Acceuil"
+            Icon="Home_Icon.png">
+            <pokediaapp:HomePage/>
+        </ShellContent>
+        <ShellContent Title="Pokédex"
+            Icon="Pokedex_Icon.png">
+            <pokediaapp:PokedexPage />
+        </ShellContent>
+        <ShellContent Title="Ajouter"
+            Icon="PLus_Icon.png">
+            <pokediaapp:AddPage />
+        </ShellContent>
+        <ShellContent Title="Equipes"
+            Icon="PokeBall_Icon.png">
+            <pokediaapp:TeamPage />
+        </ShellContent>
+    </TabBar>
+</Shell>
