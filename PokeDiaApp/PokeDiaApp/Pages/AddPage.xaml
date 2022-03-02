@@ -16,7 +16,9 @@
                    FontSize="50"/>
             </Frame>
 
-            <Label Text="Welcome to Add Page"
+            <Label 
+                TextColor="#e7e7e6"
+                Text="Welcome to Add Page"
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand" />
         </StackLayout>

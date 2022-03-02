@@ -16,7 +16,9 @@
                    FontSize="50"/>
             </Frame>
 
-            <Label Text="Welcome to Team Page"
+            <Label 
+                TextColor="#e7e7e6"
+                Text="Welcome to Team Page"
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand" />
         </StackLayout>
