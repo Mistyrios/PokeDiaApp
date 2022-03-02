@@ -26,13 +26,8 @@
                             <Grid Padding="10" >
                                 <Frame CornerRadius="180" HasShadow="true" Padding="10" BackgroundColor="#d6d7d6" >
                                     <StackLayout Orientation="Horizontal" VerticalOptions="Center" Padding="20,0,0,0">
-<<<<<<< HEAD
-                                        <StackLayout>
-                                            <Label  FontSize="Large" Text="{Binding Name}"></Label>
-=======
                                         <StackLayout >
                                             <Label TextColor="#323233"  FontSize="Large" Text="{Binding Name}"></Label>
->>>>>>> f76d1d5564095694ee82898971d0661ad6a13303
                                             <StackLayout Padding="20, 0, 0, 0" Orientation="Horizontal">
                                                 <Label TextColor="#323233" FontSize="Body" FontAttributes="Bold" Text="{Binding Type1}"></Label>
                                                 <Label TextColor="#323233" FontSize="Body" FontAttributes="Bold" Text="{Binding Type2}"></Label>
