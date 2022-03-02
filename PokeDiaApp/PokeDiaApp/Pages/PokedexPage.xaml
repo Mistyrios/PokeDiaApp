@@ -20,13 +20,13 @@
             <ListView x:Name="pokemonsList"
                       HasUnevenRows="true"
                       ItemsSource="{Binding MyList}">
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <ViewCell>
-                            <Grid Padding="10">
-                                <Frame CornerRadius="180" HasShadow="true" Padding="10" BackgroundColor="#d6d7d6">
+                <ListView.ItemTemplate Clicked="ShowDetails">
+                    <DataTemplate >
+                        <ViewCell >
+                            <Grid Padding="10" >
+                                <Frame CornerRadius="180" HasShadow="true" Padding="10" BackgroundColor="#d6d7d6" >
                                     <StackLayout Orientation="Horizontal" VerticalOptions="Center" Padding="20,0,0,0">
-                                        <StackLayout >
+                                        <StackLayout>
                                             <Label  FontSize="Large" Text="{Binding Name}"></Label>
                                             <StackLayout Padding="20, 0, 0, 0" Orientation="Horizontal">
                                                 <Label  FontSize="Body" FontAttributes="Bold" Text="{Binding Type1}"></Label>

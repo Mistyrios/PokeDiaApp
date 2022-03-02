@@ -3,8 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="PokeDiaApp.DetailsPage"
              x:Name="container">
-    
-    <ContentPage.Content>
+
+    <ContentPage.Content ItemSource="{Binding pokemonDeTest}">
         <StackLayout BackgroundColor="#6a6b6a">
             <Frame
                 HorizontalOptions="CenterAndExpand"
@@ -17,10 +17,17 @@
                 TextColor="#e7e6e7"
                    FontSize="50"/>
             </Frame>
-
-            <Label Text="Welcome to Details Page"
+            <Frame>
+                <StackLayout><Label Text="{Binding Name}"
                 VerticalOptions="CenterAndExpand" 
+                TextColor="#e7e6e7"
                 HorizontalOptions="CenterAndExpand" />
+                    <StackLayout>
+                        
+                    </StackLayout>
+                </StackLayout>
+            </Frame>
+            
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
