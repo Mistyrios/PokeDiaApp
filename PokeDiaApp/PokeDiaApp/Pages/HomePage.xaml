@@ -7,17 +7,18 @@
             <Frame
                 BackgroundColor="#c73648"   
                 CornerRadius="15"
-                Padding="80,0,0,0"
+                Padding="0,0,0,0"
                 Margin="10,10,10,0">
 
                 <Label Text="PokeDia"
                 TextColor="#e7e7e6"
-                   FontSize="50"/>
+                   FontSize="50"
+                   HorizontalTextAlignment="Center"/>
             </Frame>
 
-            <Image FlexLayout.Basis="35%" HorizontalOptions="CenterAndExpand" Source="PokedexHomeIcon.png"></Image>
+            <Image FlexLayout.Basis="30%" HorizontalOptions="CenterAndExpand" Source="PokedexHomeIcon.png"></Image>
 
-            <StackLayout Spacing="20" Margin="10,0,10,0">
+            <StackLayout Spacing="20" Margin="10,20,10,0">
                 <Label  
                 TextColor="#e7e7e6"
                 HorizontalTextAlignment="Center"

@@ -34,8 +34,10 @@
                                             </StackLayout>
                                             <Label TextColor="#323233" FontSize="Small" FontAttributes="Bold" Text="{Binding Number}"></Label>
                                         </StackLayout>
-                                        <StackLayout HorizontalOptions="EndAndExpand" VerticalOptions="CenterAndExpand" Padding="0,0,10,0">
-                                            <Image BackgroundColor="#838383" HeightRequest="70" WidthRequest="70" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Source="{Binding Url1}"></Image>
+                                        <StackLayout HorizontalOptions="EndAndExpand" VerticalOptions="CenterAndExpand" Padding="0,0,10,0" >
+                                            <Frame CornerRadius="40" BackgroundColor="#838383">
+                                                <Image HeightRequest="80" WidthRequest="80" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Source="{Binding Url}"></Image>
+                                            </Frame>
                                         </StackLayout>
                                     </StackLayout>
                                 </Frame>

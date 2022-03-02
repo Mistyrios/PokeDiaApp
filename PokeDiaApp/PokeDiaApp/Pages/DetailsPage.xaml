@@ -4,7 +4,7 @@
              x:Class="PokeDiaApp.DetailsPage"
              x:Name="container">
 
-    <ContentPage.Content ItemSource="{Binding pokemonDeTest}">
+    <!--<ContentPage.Content ItemSource="{Binding pokemonDeTest}">
         <StackLayout BackgroundColor="#6a6b6a">
             <Frame
                 HorizontalOptions="CenterAndExpand"
@@ -29,5 +29,5 @@
             </Frame>
             
         </StackLayout>
-    </ContentPage.Content>
+    </ContentPage.Content>-->
 </ContentPage>

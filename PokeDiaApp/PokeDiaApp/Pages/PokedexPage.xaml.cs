@@ -14,7 +14,7 @@ namespace PokeDiaApp
         public PokedexPage()
         {
             InitializeComponent();
-            BindingContext = ListeViewModel.Instance;
+            BindingContext = ListViewModel.Instance;
         }
 
         public async void ShowDetails(Object sender, EventArgs args)
