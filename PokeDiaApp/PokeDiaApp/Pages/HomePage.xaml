@@ -3,22 +3,52 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="PokeDiaApp.HomePage">
     <ContentPage.Content>
-        <StackLayout BackgroundColor="#6a6b6a">
+        <FlexLayout BackgroundColor="#6a6b6a" Direction="Column">
             <Frame
-                HorizontalOptions="CenterAndExpand"
                 BackgroundColor="#c73648"   
                 CornerRadius="15"
-                Padding="80,0,80,0"
-                Margin="0,10,0,0"
-                >
+                Padding="80,0,0,0"
+                Margin="10,10,10,0">
+
                 <Label Text="PokeDia"
                 TextColor="#e7e7e6"
                    FontSize="50"/>
             </Frame>
 
-            <Label Text="Welcome to Home Page"
+            <Image FlexLayout.Basis="35%" HorizontalOptions="CenterAndExpand" Source="PokedexHomeIcon.png"></Image>
+
+            <StackLayout Spacing="20" Margin="10,0,10,0">
+                <Label  
+                TextColor="#e7e7e6"
+                HorizontalTextAlignment="Center"
+                Text="Pokédia est une application non-officielle recréant un pokédex. Elle contient les données détaillées de chaque Pokémon de Pokémon Rouge à Pokémon légendes : Arceus"
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
+                <Label
+                TextColor="#e7e7e6"
+                HorizontalTextAlignment="Center"
+                Text="Elle possède donc plusieurs onglets qui vous seront utiles lors de vos aventures :"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+                <Label  
+                TextColor="#e7e7e6"
+                HorizontalTextAlignment="Center"
+                Text="Un Pokédex qui vous permettra de vous renseigner en détails sur les Pokémons des différentes versions."
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+                <Label
+                TextColor="#e7e7e6"
+                HorizontalTextAlignment="Center"
+                Text="Un onglet vous permettant d'ajouter un Pokémon dans votre pokédex si celui-ci n'y est pas encore disponible."
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+                <Label
+                TextColor="#e7e7e6"
+                HorizontalTextAlignment="Center"
+                Text="Enfin un onglet vous permettant d'y enregistrer vos équipes des différentes versions."
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+            </StackLayout>
+        </FlexLayout>
     </ContentPage.Content>
 </ContentPage>
