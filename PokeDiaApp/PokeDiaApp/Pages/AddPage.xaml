@@ -4,39 +4,29 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="PokeDiaApp.AddPage">
     <ContentPage.Content>
-        <StackLayout BackgroundColor="#6a6b6a" >
+        <StackLayout BackgroundColor="#6a6b6a">
             <Frame
-<<<<<<< HEAD
-                HorizontalOptions="CenterAndExpand"
                 BackgroundColor="#c73648"
-                CornerRadius="15"
-                Padding="80,0,80,0"
-                Margin="0,10,0,0">
-                <Label Text="PokeDia"
-                       TextColor="#e7e6e7"
-                       FontSize="50" />
-=======
-                BackgroundColor="#c73648"   
                 CornerRadius="15"
                 Padding="0,0,0,0"
                 Margin="10,10,10,0">
                 <Label Text="PokeDia"
-                TextColor="#e7e7e6"
-                   FontSize="50"
-                   HorizontalTextAlignment="Center"/>
->>>>>>> efc3cce509deae16ef0c2868f63af14a0c2101f6
+                       TextColor="#e7e7e6"
+                       FontSize="50"
+                       HorizontalTextAlignment="Center" />
+
             </Frame>
             <StackLayout VerticalOptions="StartAndExpand" HorizontalOptions="CenterAndExpand">
                 <StackLayout Orientation="Horizontal" FlexLayout.Basis="40">
-                    <StackLayout Orientation="Vertical" Margin="0,0,20,0" >
+                    <StackLayout Orientation="Vertical" Margin="0,0,20,0">
                         <Label Text="Nom du pokemon :" Margin="0,0,50,0"></Label>
                         <Entry Text="test" HeightRequest="40" WidthRequest="30" Margin="0,0,40,0"></Entry>
                     </StackLayout>
-                   <StackLayout>
+                    <StackLayout>
                         <Label Text="Numero du pokemon :"></Label>
-                       <Entry Text="test" HeightRequest="40" WidthRequest="30"></Entry>
+                        <Entry Text="test" HeightRequest="40" WidthRequest="30"></Entry>
                     </StackLayout>
-                    
+
                 </StackLayout>
                 <StackLayout Orientation="Horizontal">
                     <Label Text="Type 1 :" Margin="0,0,120,0"></Label>
