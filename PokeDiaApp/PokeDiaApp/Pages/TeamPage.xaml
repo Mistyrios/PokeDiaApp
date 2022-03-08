@@ -5,15 +5,14 @@
     <ContentPage.Content>
         <StackLayout BackgroundColor="#6a6b6a">
             <Frame
-                HorizontalOptions="CenterAndExpand"
                 BackgroundColor="#c73648"   
                 CornerRadius="15"
-                Padding="80,0,80,0"
-                Margin="0,10,0,0"
-                >
+                Padding="0,0,0,0"
+                Margin="10,10,10,0">
                 <Label Text="PokeDia"
-                TextColor="#e7e6e7"
-                   FontSize="50"/>
+                TextColor="#e7e7e6"
+                   FontSize="50"
+                   HorizontalTextAlignment="Center"/>
             </Frame>
 
             <Label 

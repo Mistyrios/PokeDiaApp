@@ -6,6 +6,7 @@
     <ContentPage.Content>
         <StackLayout BackgroundColor="#6a6b6a" >
             <Frame
+<<<<<<< HEAD
                 HorizontalOptions="CenterAndExpand"
                 BackgroundColor="#c73648"
                 CornerRadius="15"
@@ -14,6 +15,16 @@
                 <Label Text="PokeDia"
                        TextColor="#e7e6e7"
                        FontSize="50" />
+=======
+                BackgroundColor="#c73648"   
+                CornerRadius="15"
+                Padding="0,0,0,0"
+                Margin="10,10,10,0">
+                <Label Text="PokeDia"
+                TextColor="#e7e7e6"
+                   FontSize="50"
+                   HorizontalTextAlignment="Center"/>
+>>>>>>> efc3cce509deae16ef0c2868f63af14a0c2101f6
             </Frame>
             <StackLayout VerticalOptions="StartAndExpand" HorizontalOptions="CenterAndExpand">
                 <StackLayout Orientation="Horizontal" FlexLayout.Basis="40">

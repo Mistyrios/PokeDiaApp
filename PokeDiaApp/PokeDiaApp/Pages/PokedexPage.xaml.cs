@@ -3,23 +3,28 @@ using System.Collections.ObjectModel;
 using PokeDiaApp.ViewModel;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using System.Linq;
 
 namespace PokeDiaApp
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class PokedexPage : ContentPage
     {
-       
 
         public PokedexPage()
         {
             InitializeComponent();
-            BindingContext = ListeViewModel.Instance;
+            BindingContext = ListViewModel.Instance;
         }
-
-        public async void ShowDetails(Object sender, EventArgs args)
+ 
+        async void Selection(object sender, SelectionChangedEventArgs e)
         {
-            await Navigation.PushAsync(new DetailsPage());
+            Pokemon selectedPokemon = (e.CurrentSelection.FirstOrDefault() as Pokemon);
+            if (selectedPokemon == null) {
+                return;
+            }
+            (sender as CollectionView).SelectedItem = null;
+            await Navigation.PushAsync(new DetailsPage(selectedPokemon));
         }
     }
 }
