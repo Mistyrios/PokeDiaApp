@@ -6,71 +6,70 @@
              x:Name="container">
 
     <ContentPage.Content>
-        <FlexLayout BackgroundColor="#6a6b6a" Direction="column">
+        <StackLayout BackgroundColor="#6a6b6a">
             <Frame
-                FlexLayout.Basis="80"
-                HorizontalOptions="CenterAndExpand"
-                BackgroundColor="#c73648"
+                BackgroundColor="#c73648"   
                 CornerRadius="15"
-                Padding="80,0,80,0"
+                Padding="0,0,0,0"
                 Margin="10,10,10,0">
                 <Label Text="PokeDia"
-                       TextColor="#e7e6e7"
-                       FontSize="50" />
+                TextColor="#e7e7e6"
+                   FontSize="50"
+                   HorizontalTextAlignment="Center"
+                   VerticalTextAlignment="Center"/>
             </Frame>
-            <Frame Margin="10" FlexLayout.Basis="650">
-                <StackLayout VerticalOptions="StartAndExpand" HorizontalOptions="CenterAndExpand">
-                    <StackLayout>
-                        <Label Text="Lucario :" VerticalOptions="CenterAndExpand" TextColor="black" FontSize="30"
-                               HorizontalOptions="CenterAndExpand" />
-                    </StackLayout>
-                    <StackLayout Orientation="Horizontal" Padding="0,30,0,0">
-                        <StackLayout Padding="0, 0, 30, 0">
-                            <Image BackgroundColor="#838383" HeightRequest="140" WidthRequest="140"
+            <ScrollView>
+                <Frame Margin="10" CornerRadius="25">
+                    <StackLayout VerticalOptions="StartAndExpand" HorizontalOptions="CenterAndExpand">
+                        <Label Text="{Binding Name}" TextColor="black" FontSize="30" HorizontalOptions="CenterAndExpand"  />
+                        <Label TextColor="#323233" FontSize="Large" FontAttributes="Bold" Text="{Binding Species}" HorizontalOptions="CenterAndExpand"></Label>
+                        <StackLayout Orientation="Horizontal" Spacing="15">
+                            <Frame BackgroundColor="#838383" CornerRadius="30">
+                                <Image  HeightRequest="100" WidthRequest="100"
                                    HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"
-                                   Source="{Binding Url1}">
-                            </Image>
-                        </StackLayout>
-                        <StackLayout>
-                            <Image BackgroundColor="#838383" HeightRequest="140" WidthRequest="140"
+                                   Source="{Binding Url}" Scale="1.5">
+                                </Image>
+                            </Frame>
+                            <Frame BackgroundColor="#838383" CornerRadius="30">
+                                <Image BackgroundColor="#838383" HeightRequest="100" WidthRequest="100"
                                    HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"
-                                   Source="{Binding Url1}">
-                            </Image>
+                                   Source="{Binding UrlShiny}" Scale="1.5">
+                                </Image>
+                            </Frame>
                         </StackLayout>
-                    </StackLayout>
-                    <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
-                        <StackLayout Padding="0,30,30,0">
-                            <Label TextColor="#323233" FontSize="Body" FontAttributes="Bold" Text="TYPE 1 : FEU"></Label>
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" Spacing="10" Padding="0,10">
+                            <Frame BackgroundColor="{Binding couleurType1}" CornerRadius="45">
+                                <Label TextColor="#323233" FontSize="Body" FontAttributes="Bold" Text="{Binding Type1}"></Label>
+                            </Frame>
+                            <Frame BackgroundColor="{Binding couleurType2}" CornerRadius="45" IsVisible="{Binding Type2IsVisible}">
+                                <Label TextColor="#323233" FontSize="Body" FontAttributes="Bold" Text="{Binding Type2}"></Label>
+                            </Frame>
                         </StackLayout>
-                        <StackLayout Padding="0,30,0,0">
-                            <Label TextColor="#323233" FontSize="Body" FontAttributes="Bold" Text="TYPE 2 : FEU"></Label>
-                        </StackLayout>
-                    </StackLayout>
-                    <Label TextColor="#323233" FontSize="Body" FontAttributes="Bold" Text="{Binding Number}"></Label>
-                    <Frame>
-                        <Label TextColor="#323233" FontSize="Body" FontAttributes="Bold"
+                        <Frame>
+                            <Label TextColor="#323233" FontSize="Body" FontAttributes="Bold"
                                Text="Lorem ipsum dolor sit amet. Laudantium beatae non ratione quia sit ipsam adipisci et facilis consequatur ">
-                        </Label>
-                    </Frame>
-                    <StackLayout HorizontalOptions="CenterAndExpand">
-                        <Label TextColor="#323233" FontSize="Body" FontAttributes="Bold" Text="Evolution :"></Label>
-                    </StackLayout>
-                    <StackLayout Orientation="Horizontal">
-                        <Image BackgroundColor="#838383" HeightRequest="70" WidthRequest="70"
+                            </Label>
+                        </Frame>
+                        <StackLayout HorizontalOptions="CenterAndExpand">
+                            <Label TextColor="#323233" FontSize="Body" FontAttributes="Bold" Text="Evolution :"></Label>
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal">
+                            <Image BackgroundColor="#838383" HeightRequest="70" WidthRequest="70"
                                HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"
                                Source="{Binding InitialForm}">
-                        </Image>
-                        <Image BackgroundColor="transparent" HeightRequest="70" WidthRequest="30"
+                            </Image>
+                            <Image BackgroundColor="transparent" HeightRequest="70" WidthRequest="30"
                                HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Source="Fleche">
-                        </Image>
-                        <Image BackgroundColor="#838383" HeightRequest="70" WidthRequest="70"
+                            </Image>
+                            <Image BackgroundColor="#838383" HeightRequest="70" WidthRequest="70"
                                HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"
                                Source="{Binding Evolution}">
-                        </Image>
+                            </Image>
+                        </StackLayout>
                     </StackLayout>
-                </StackLayout>
-            </Frame>
-
-        </FlexLayout>
+                </Frame>
+            </ScrollView>
+        </StackLayout>
     </ContentPage.Content>
 </ContentPage>
+    
