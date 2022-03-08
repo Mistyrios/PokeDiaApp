@@ -1,26 +1,60 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
+
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="PokeDiaApp.AddPage">
     <ContentPage.Content>
-        <StackLayout BackgroundColor="#6a6b6a">
+        <StackLayout BackgroundColor="#6a6b6a" >
             <Frame
                 HorizontalOptions="CenterAndExpand"
-                BackgroundColor="#c73648"   
+                BackgroundColor="#c73648"
                 CornerRadius="15"
                 Padding="80,0,80,0"
-                Margin="0,10,0,0"
-                >
+                Margin="0,10,0,0">
                 <Label Text="PokeDia"
-                TextColor="#e7e6e7"
-                   FontSize="50"/>
+                       TextColor="#e7e6e7"
+                       FontSize="50" />
             </Frame>
-
-            <Label 
-                TextColor="#e7e7e6"
-                Text="Welcome to Add Page"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <StackLayout VerticalOptions="StartAndExpand" HorizontalOptions="CenterAndExpand">
+                <StackLayout Orientation="Horizontal" FlexLayout.Basis="40">
+                    <StackLayout Orientation="Vertical" Margin="0,0,20,0" >
+                        <Label Text="Nom du pokemon :" Margin="0,0,50,0"></Label>
+                        <Entry Text="test" HeightRequest="40" WidthRequest="30" Margin="0,0,40,0"></Entry>
+                    </StackLayout>
+                   <StackLayout>
+                        <Label Text="Numero du pokemon :"></Label>
+                       <Entry Text="test" HeightRequest="40" WidthRequest="30"></Entry>
+                    </StackLayout>
+                    
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Type 1 :" Margin="0,0,120,0"></Label>
+                    <Label Text="Type 2 :"></Label>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <StackLayout Margin="0,0,100,0">
+                        <Label Text="Normal:" HorizontalOptions="CenterAndExpand"></Label>
+                        <Image BackgroundColor="#838383" HeightRequest="100" WidthRequest="100"
+                               HorizontalOptions="CenterAndExpand"
+                               VerticalOptions="CenterAndExpand" Source="">
+                        </Image>
+                    </StackLayout>
+                    <StackLayout>
+                        <Label Text="Shiny :" HorizontalOptions="CenterAndExpand"></Label>
+                        <Image BackgroundColor="#838383" HeightRequest="100" WidthRequest="100"
+                               HorizontalOptions="CenterAndExpand"
+                               VerticalOptions="CenterAndExpand" Source="">
+                        </Image>
+                    </StackLayout>
+                </StackLayout>
+                <StackLayout>
+                    <Label Text="Description du pokémon :"></Label>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Button Text="Ajouter" BackgroundColor="#c73648" HeightRequest="50" WidthRequest="100"></Button>
+                </StackLayout>
+            </StackLayout>
         </StackLayout>
+
     </ContentPage.Content>
 </ContentPage>
