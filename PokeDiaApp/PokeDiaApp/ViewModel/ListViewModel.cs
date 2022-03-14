@@ -58,12 +58,12 @@ namespace PokeDiaApp.ViewModel
                 }
                 mypokemon.Height = "Height: " + pokemon.Height.ToString();
                 mypokemon.Weight = "Weight: " + pokemon.Weight.ToString();
-                mypokemon.HP = pokemon.Stats[0].BaseStat / 100 ;
-                mypokemon.Attack = pokemon.Stats[1].BaseStat / 100;
-                mypokemon.Defense = pokemon.Stats[2].BaseStat / 100;
-                mypokemon.SpecialAttack = pokemon.Stats[3].BaseStat / 100;
-                mypokemon.SpecialDefense = pokemon.Stats[4].BaseStat / 100;
-                mypokemon.Speed = pokemon.Stats[5].BaseStat / 100;
+                mypokemon.HP = (double)pokemon.Stats[0].BaseStat / 100 ;
+                mypokemon.Attack = (double)pokemon.Stats[1].BaseStat / 100;
+                mypokemon.Defense = (double)pokemon.Stats[2].BaseStat / 100;
+                mypokemon.SpecialAttack = (double)pokemon.Stats[3].BaseStat / 100;
+                mypokemon.SpecialDefense = (double)pokemon.Stats[4].BaseStat / 100;
+                mypokemon.Speed = (double)pokemon.Stats[5].BaseStat / 100;
 
                 MyList.Add(mypokemon);
             }
