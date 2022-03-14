@@ -22,11 +22,20 @@ namespace PokeDiaApp
 
         public Boolean Type2IsVisible { get; set; }
 
-        public String couleurType1 { get; set; }
+        public String colorType1 { get; set; }
 
-        public String couleurType2 { get; set; }
+        public String colorType2 { get; set; }
 
-        public String Species { get; set; }
+        public String Description { get; set; }
 
+        public String Height { get; set; }
+        
+        public String Weight { get; set; }
+        public double HP { get; set; }
+        public double Attack { get; set; }
+        public double Defense   { get; set; }
+        public double SpecialDefense { get; set; }
+        public double SpecialAttack { get; set; }
+        public double Speed { get; set; }
     }
 }

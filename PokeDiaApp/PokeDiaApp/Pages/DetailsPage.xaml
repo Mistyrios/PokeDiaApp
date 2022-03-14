@@ -19,7 +19,7 @@
                    VerticalTextAlignment="Center"/>
             </Frame>
             <ScrollView>
-                <Frame Margin="10" CornerRadius="25">
+                <Frame Margin="10" CornerRadius="25" Background="#e7e7e6">
                     <StackLayout VerticalOptions="StartAndExpand" HorizontalOptions="CenterAndExpand">
                         <Label Text="{Binding Name}" TextColor="black" FontSize="30" HorizontalOptions="CenterAndExpand"  />
                         <Label TextColor="#323233" FontSize="Large" FontAttributes="Bold" Text="{Binding Species}" HorizontalOptions="CenterAndExpand"></Label>
@@ -45,26 +45,18 @@
                                 <Label TextColor="#323233" FontSize="Body" FontAttributes="Bold" Text="{Binding Type2}"></Label>
                             </Frame>
                         </StackLayout>
-                        <Frame>
+                        <Frame Background="#e7e7e6" CornerRadius="15">
                             <Label TextColor="#323233" FontSize="Body" FontAttributes="Bold"
-                               Text="Lorem ipsum dolor sit amet. Laudantium beatae non ratione quia sit ipsam adipisci et facilis consequatur ">
+                               Text="{Binding Description}">
                             </Label>
                         </Frame>
-                        <StackLayout HorizontalOptions="CenterAndExpand">
-                            <Label TextColor="#323233" FontSize="Body" FontAttributes="Bold" Text="Evolution :"></Label>
-                        </StackLayout>
-                        <StackLayout Orientation="Horizontal">
-                            <Image BackgroundColor="#838383" HeightRequest="70" WidthRequest="70"
-                               HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"
-                               Source="{Binding InitialForm}">
-                            </Image>
-                            <Image BackgroundColor="transparent" HeightRequest="70" WidthRequest="30"
-                               HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Source="Fleche">
-                            </Image>
-                            <Image BackgroundColor="#838383" HeightRequest="70" WidthRequest="70"
-                               HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"
-                               Source="{Binding Evolution}">
-                            </Image>
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" Spacing="10" Padding="0,10">
+                            <Frame CornerRadius="45">
+                                <Label TextColor="#323233" FontSize="Body" FontAttributes="Bold" Text="{Binding Height}"></Label>
+                            </Frame>
+                            <Frame CornerRadius="45">
+                                <Label TextColor="#323233" FontSize="Body" FontAttributes="Bold" Text="{Binding Weight}"></Label>
+                            </Frame>
                         </StackLayout>
                     </StackLayout>
                 </Frame>

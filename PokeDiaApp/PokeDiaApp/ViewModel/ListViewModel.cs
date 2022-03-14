@@ -24,10 +24,10 @@ namespace PokeDiaApp.ViewModel
 
         public async void InitList()
         {
-            PokeApiClient pokeClient = new PokeApiClient();
+            PokeApiClient pokeClientPokemon = new PokeApiClient();
 
             for (int i = 1; i <= 50; i++) {
-                PokeApiNet.Pokemon pokemon = await Task.Run(() => pokeClient.GetResourceAsync<PokeApiNet.Pokemon>(i));
+                PokeApiNet.Pokemon pokemon = await Task.Run(() => pokeClientPokemon.GetResourceAsync<PokeApiNet.Pokemon>(i));
                 Pokemon mypokemon = new Pokemon();
                 mypokemon.Name = pokemon.Name;
                 char[] nameLetters = mypokemon.Name.ToCharArray();
@@ -36,7 +36,7 @@ namespace PokeDiaApp.ViewModel
                 mypokemon.Number = "No. " + pokemon.Id;
                 mypokemon.Url = pokemon.Sprites.FrontDefault;
                 mypokemon.Type1 = pokemon.Types[0].Type.Name;
-                mypokemon.couleurType1 = CouleurType.ColorDictionary[mypokemon.Type1.ToLower()];
+                mypokemon.colorType1 = CouleurType.ColorDictionary[mypokemon.Type1.ToLower()];
                 char[] type1letters = mypokemon.Type1.ToCharArray();
                 type1letters[0] = char.ToUpper(type1letters[0]);
                 mypokemon.Type1 = new string(type1letters);
@@ -46,11 +46,25 @@ namespace PokeDiaApp.ViewModel
                     type2letters[0] = char.ToUpper(type2letters[0]);
                     mypokemon.Type2 = new string(type2letters);
                     mypokemon.Type2IsVisible = true;
-                    mypokemon.couleurType2 = CouleurType.ColorDictionary[mypokemon.Type2.ToLower()];
+                    mypokemon.colorType2 = CouleurType.ColorDictionary[mypokemon.Type2.ToLower()];
                 }
-
                 mypokemon.UrlShiny = pokemon.Sprites.FrontShiny;
-                mypokemon.Species = pokemon.Weight.ToString();
+                if (i < 31) {
+                    PokeApiNet.Characteristic characteristic = await Task.Run(() => pokeClientPokemon.GetResourceAsync<PokeApiNet.Characteristic>(i));
+                    mypokemon.Description = characteristic.Descriptions[7].Description;
+                }
+                else {
+                    mypokemon.Description = "No description for this Pokemon";
+                }
+                mypokemon.Height = "Taille: " + pokemon.Height.ToString();
+                mypokemon.Weight = "Poids: " + pokemon.Weight.ToString();
+                mypokemon.HP = pokemon.Stats[0].BaseStat;
+                mypokemon.Attack = pokemon.Stats[1].BaseStat;
+                mypokemon.Defense = pokemon.Stats[2].BaseStat;
+                mypokemon.SpecialAttack = pokemon.Stats[3].BaseStat;
+                mypokemon.SpecialDefense = pokemon.Stats[4].BaseStat;
+                mypokemon.Speed = pokemon.Stats[5].BaseStat;
+
                 MyList.Add(mypokemon);
             }
         }
