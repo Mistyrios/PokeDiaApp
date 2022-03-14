@@ -2,6 +2,7 @@
 
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:plugin="clr-namespace:ProgressRingControl.Forms.Plugin;assembly=ProgressRing.Forms.Plugin"
              x:Class="PokeDiaApp.DetailsPage"
              x:Name="container">
 
@@ -58,6 +59,19 @@
                                 <Label TextColor="#323233" FontSize="Body" FontAttributes="Bold" Text="{Binding Weight}"></Label>
                             </Frame>
                         </StackLayout>
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" Spacing="10" Padding="0,10">
+                            <Frame CornerRadius="45">
+                                <StackLayout>
+                                    <Label TextColor="#323233" FontSize="Body" FontAttributes="Bold" Text="{Binding HP}"></Label>
+                                    <Label TextColor="#323233" FontSize="Body" FontAttributes="Bold" Text="{Binding Attack}"></Label>
+                                    <Label TextColor="#323233" FontSize="Body" FontAttributes="Bold" Text="{Binding Defense}"></Label>
+                                    <Label TextColor="#323233" FontSize="Body" FontAttributes="Bold" Text="{Binding SpecialAttack}"></Label>
+                                    <Label TextColor="#323233" FontSize="Body" FontAttributes="Bold" Text="{Binding SpecialDefense}"></Label>
+                                    <Label TextColor="#323233" FontSize="Body" FontAttributes="Bold" Text="{Binding Speed}"></Label>
+                                </StackLayout>
+                            </Frame>
+                        </StackLayout>
+                        <plugin:ProgressRing   HeightRequest="50" RingProgressColor="Orange" WidthRequest="50" RingThickness="5" Progress="0.5"/>
                     </StackLayout>
                 </Frame>
             </ScrollView>
