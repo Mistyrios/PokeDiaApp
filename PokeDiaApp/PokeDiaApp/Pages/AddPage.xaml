@@ -14,48 +14,77 @@
                        TextColor="#e7e7e6"
                        FontSize="50"
                        HorizontalTextAlignment="Center" />
-
             </Frame>
             <StackLayout VerticalOptions="StartAndExpand" HorizontalOptions="CenterAndExpand">
-                <StackLayout Orientation="Horizontal" FlexLayout.Basis="40">
-                    <StackLayout Orientation="Vertical" Margin="0,0,20,0">
-                        <Label Text="Nom du pokemon :" Margin="0,0,50,0"></Label>
-                        <Entry Text="test" HeightRequest="40" WidthRequest="30" Margin="0,0,40,0"></Entry>
-                    </StackLayout>
+                <Frame BackgroundColor="#E7E7E6">
                     <StackLayout>
-                        <Label Text="Numero du pokemon :"></Label>
-                        <Entry Text="test" HeightRequest="40" WidthRequest="30"></Entry>
-                    </StackLayout>
+                        <StackLayout Orientation="Horizontal" FlexLayout.Basis="40">
 
-                </StackLayout>
-                <StackLayout Orientation="Horizontal">
-                    <Label Text="Type 1 :" Margin="0,0,120,0"></Label>
-                    <Label Text="Type 2 :"></Label>
-                </StackLayout>
-                <StackLayout Orientation="Horizontal">
-                    <StackLayout Margin="0,0,100,0">
-                        <Label Text="Normal:" HorizontalOptions="CenterAndExpand"></Label>
-                        <Image BackgroundColor="#838383" HeightRequest="100" WidthRequest="100"
-                               HorizontalOptions="CenterAndExpand"
-                               VerticalOptions="CenterAndExpand" Source="">
-                        </Image>
+                            <StackLayout Orientation="Vertical" Margin="0,0,20,0">
+                                <Label TextColor="#000000" Text="Nom du pokemon :" Margin="0,0,50,0" />
+                                <Entry Text="test" HeightRequest="40" WidthRequest="30"
+                                       Margin="0,0,40,0" x:Name="name">
+                                </Entry>
+                            </StackLayout>
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal">
+                            <StackLayout>
+                                <Label TextColor="#000000" Text="Type 1 :" Margin="0,0,140,0"></Label>
+                                <Entry Text="test" HeightRequest="40" WidthRequest="40" x:Name="FirstType"
+                                       Margin="0,0,58,0">
+                                </Entry>
+                            </StackLayout>
+                            <StackLayout>
+                                <Label TextColor="#000000" Text="Type 2 :" Margin="0,0,0,00"></Label>
+                                <Entry Text="test" HeightRequest="40" WidthRequest="135" x:Name="SecondType">
+                                </Entry>
+                            </StackLayout>
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal">
+                            <StackLayout>
+                                <Label TextColor="#000000" Text="Height :" Margin="0,0,0,00"></Label>
+                                <Entry Text="test" HeightRequest="40" WidthRequest="135" x:Name="Height">
+                                </Entry>
+                            </StackLayout>
+                            <StackLayout>
+                                <Label TextColor="#000000" Text="Weight" Margin="0,0,0,00"></Label>
+                                <Entry Text="test" HeightRequest="40" WidthRequest="135" x:Name="Weight">
+                                </Entry>
+                            </StackLayout>
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal">
+                            <StackLayout Margin="0,0,100,0">
+                                <Label TextColor="#000000" Text="Normal:" HorizontalOptions="CenterAndExpand"></Label>
+                                <Image BackgroundColor="#838383" HeightRequest="100" WidthRequest="100"
+                                       HorizontalOptions="CenterAndExpand"
+                                       VerticalOptions="CenterAndExpand" Source="">
+                                </Image>
+                            </StackLayout>
+                            <StackLayout>
+                                <Label TextColor="#000000" Text="Shiny :" HorizontalOptions="CenterAndExpand"></Label>
+                                <Image BackgroundColor="#838383" HeightRequest="100" WidthRequest="100"
+                                       HorizontalOptions="CenterAndExpand"
+                                       VerticalOptions="CenterAndExpand" Source="">
+                                </Image>
+                            </StackLayout>
+                        </StackLayout>
+
+                        <StackLayout>
+                            <Label TextColor="#000000" Text="Description du pokémon :" HorizontalTextAlignment="Center"></Label>
+                            <Entry Text="test" HeightRequest="40" WidthRequest="40" x:Name="Description"
+                                   Margin="0,0,58,0">
+                            </Entry>
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal">
+                            <Button TextColor="#FFFFFF" Text="Ajouter" BackgroundColor="#c73648" HeightRequest="50"
+                                    WidthRequest="100" HorizontalOptions="CenterAndExpand" Margin="0,10,0,0"
+                                    Clicked="AddButtonClicked">
+                            </Button>
+                        </StackLayout>
+
                     </StackLayout>
-                    <StackLayout>
-                        <Label Text="Shiny :" HorizontalOptions="CenterAndExpand"></Label>
-                        <Image BackgroundColor="#838383" HeightRequest="100" WidthRequest="100"
-                               HorizontalOptions="CenterAndExpand"
-                               VerticalOptions="CenterAndExpand" Source="">
-                        </Image>
-                    </StackLayout>
-                </StackLayout>
-                <StackLayout>
-                    <Label Text="Description du pokémon :"></Label>
-                </StackLayout>
-                <StackLayout Orientation="Horizontal">
-                    <Button Text="Ajouter" BackgroundColor="#c73648" HeightRequest="50" WidthRequest="100"></Button>
-                </StackLayout>
+                </Frame>
             </StackLayout>
         </StackLayout>
-
     </ContentPage.Content>
 </ContentPage>
