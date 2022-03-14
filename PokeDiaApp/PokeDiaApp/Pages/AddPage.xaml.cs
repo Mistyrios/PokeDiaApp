@@ -22,12 +22,12 @@ namespace PokeDiaApp
         private void AddButtonClicked(object sender, EventArgs e)
         {
             pokemon = new Pokemon();
-            pokemon.Name = name.Text;
-            pokemon.Type1 = FirstType.Text;
-            pokemon.Type2 = SecondType.Text;
-            pokemon.Description = Description.Text;
-            pokemon.Height = Height.Text;
-            pokemon.Weight = Weight.Text;
+            //pokemon.Name = Name.Text;
+            //pokemon.Type1 = FirstType.Text;
+            //pokemon.Type2 = SecondType.Text;
+            //pokemon.Description = Description.Text;
+            //pokemon.Height = Height.Text;
+            //pokemon.Weight = Weight.Text;
         }
     }
 }
