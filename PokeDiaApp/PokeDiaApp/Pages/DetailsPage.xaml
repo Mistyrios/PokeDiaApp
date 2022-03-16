@@ -9,73 +9,135 @@
     <ContentPage.Content>
         <StackLayout BackgroundColor="#6a6b6a">
             <Frame
-                BackgroundColor="#c73648"   
+                BackgroundColor="#c73648"
                 CornerRadius="15"
                 Padding="0,0,0,0"
                 Margin="10,10,10,0">
                 <Label Text="PokeDia"
-                TextColor="#e7e7e6"
-                   FontSize="50"
-                   HorizontalTextAlignment="Center"
-                   VerticalTextAlignment="Center"/>
+                       TextColor="#e7e7e6"
+                       FontSize="50"
+                       HorizontalTextAlignment="Center"
+                       VerticalTextAlignment="Center" 
+                       Style="{StaticResource PokemonFont}"/>
             </Frame>
             <ScrollView>
                 <Frame Margin="10" CornerRadius="25" Background="#e7e7e6">
                     <StackLayout VerticalOptions="StartAndExpand" HorizontalOptions="CenterAndExpand">
-                        <Label Text="{Binding Name}" TextColor="black" FontSize="30" HorizontalOptions="CenterAndExpand"  />
-                        <Label TextColor="#323233" FontSize="Large" FontAttributes="Bold" Text="{Binding Species}" HorizontalOptions="CenterAndExpand"></Label>
+                        <Label Text="{Binding Name}" TextColor="black" FontSize="30"
+                               HorizontalOptions="CenterAndExpand" />
+                        <Label TextColor="#323233" FontSize="Large" FontAttributes="Bold" Text="{Binding Number, StringFormat='No.{0}'}"
+                               HorizontalOptions="CenterAndExpand">
+                        </Label>
                         <StackLayout Orientation="Horizontal" Spacing="15">
                             <Frame BackgroundColor="#838383" CornerRadius="30">
-                                <Image  HeightRequest="100" WidthRequest="100"
-                                   HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"
-                                   Source="{Binding Url}" Scale="1.5">
+                                <Image HeightRequest="100" WidthRequest="100"
+                                       HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"
+                                       Source="{Binding UrlFront}" Scale="1.5">
                                 </Image>
                             </Frame>
                             <Frame BackgroundColor="#838383" CornerRadius="30">
                                 <Image BackgroundColor="#838383" HeightRequest="100" WidthRequest="100"
-                                   HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"
-                                   Source="{Binding UrlShiny}" Scale="1.5">
+                                       HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"
+                                       Source="{Binding UrlBack}" Scale="1.5">
                                 </Image>
                             </Frame>
                         </StackLayout>
-                        <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" Spacing="10" Padding="0,10">
-                            <Frame BackgroundColor="{Binding couleurType1}" CornerRadius="45">
-                                <Label TextColor="#323233" FontSize="Body" FontAttributes="Bold" Text="{Binding Type1}"></Label>
+                        <StackLayout Orientation="Horizontal" Spacing="15">
+                            <Frame BackgroundColor="#838383" CornerRadius="30">
+                                <Image HeightRequest="100" WidthRequest="100"
+                                       HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"
+                                       Source="{Binding UrlShinyFront}" Scale="1.5">
+                                </Image>
                             </Frame>
-                            <Frame BackgroundColor="{Binding couleurType2}" CornerRadius="45" IsVisible="{Binding Type2IsVisible}">
-                                <Label TextColor="#323233" FontSize="Body" FontAttributes="Bold" Text="{Binding Type2}"></Label>
+                            <Frame BackgroundColor="#838383" CornerRadius="30">
+                                <Image BackgroundColor="#838383" HeightRequest="100" WidthRequest="100"
+                                       HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"
+                                       Source="{Binding UrlShinyBack}" Scale="1.5">
+                                </Image>
                             </Frame>
                         </StackLayout>
-                        <Frame Background="#e7e7e6" CornerRadius="15">
-                            <Label TextColor="#323233" FontSize="Body" FontAttributes="Bold"
-                               Text="{Binding Description}">
+
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" Spacing="10"
+                                     Padding="0,10">
+                            <Frame BackgroundColor="{Binding colorType1}" CornerRadius="45">
+                                <Label TextColor="#e7e7e6" FontSize="Body" FontAttributes="Bold" Text="{Binding Type1}"></Label>
+                            </Frame>
+                            <Frame BackgroundColor="{Binding colorType2}" CornerRadius="45"
+                                   IsVisible="{Binding Type2IsVisible}">
+                                <Label TextColor="#e7e7e6" FontSize="Body" FontAttributes="Bold" Text="{Binding Type2}"></Label>
+                            </Frame>
+                        </StackLayout>
+
+                        <Frame Background="#838383" CornerRadius="15">
+                            <Label TextColor="#e7e7e6" FontSize="Body" FontAttributes="Bold" HorizontalTextAlignment="Center"
+                                   Text="{Binding Description}">
                             </Label>
                         </Frame>
-                        <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" Spacing="10" Padding="0,10">
-                            <Frame CornerRadius="45">
-                                <Label TextColor="#323233" FontSize="Body" FontAttributes="Bold" Text="{Binding Height}"></Label>
+
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" Spacing="10"
+                                     Padding="0,10">
+                            <Frame Background="#838383" CornerRadius="45">
+                                <Label TextColor="#e7e7e6" FontSize="Body" FontAttributes="Bold"
+                                       Text="{Binding Height, StringFormat='{0}m'}">
+                                </Label>
                             </Frame>
-                            <Frame CornerRadius="45">
-                                <Label TextColor="#323233" FontSize="Body" FontAttributes="Bold" Text="{Binding Weight}"></Label>
+                            <Frame Background="#838383" CornerRadius="45">
+                                <Label TextColor="#e7e7e6" FontSize="Body" FontAttributes="Bold"
+                                       Text="{Binding Weight, StringFormat='{0}Kg'}">
+                                </Label>
                             </Frame>
                         </StackLayout>
-                        <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" Spacing="10" Padding="0,10">
-                            <Frame CornerRadius="45">
+
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" Spacing="10"
+                                     Padding="0,10">
+                            <Frame Background="#838383" CornerRadius="45">
                                 <StackLayout>
-                                    <Label TextColor="#323233" FontSize="Body" FontAttributes="Bold" Text="{Binding HP}"></Label>
-                                    <Label TextColor="#323233" FontSize="Body" FontAttributes="Bold" Text="{Binding Attack}"></Label>
-                                    <Label TextColor="#323233" FontSize="Body" FontAttributes="Bold" Text="{Binding Defense}"></Label>
-                                    <Label TextColor="#323233" FontSize="Body" FontAttributes="Bold" Text="{Binding SpecialAttack}"></Label>
-                                    <Label TextColor="#323233" FontSize="Body" FontAttributes="Bold" Text="{Binding SpecialDefense}"></Label>
-                                    <Label TextColor="#323233" FontSize="Body" FontAttributes="Bold" Text="{Binding Speed}"></Label>
+                                    <StackLayout Orientation="Horizontal">
+                                        <Label TextColor="#e7e7e6" FontSize="Body" FontAttributes="Bold" Text="HP"></Label>
+                                        <plugin:ProgressRing HeightRequest="25" RingProgressColor="#c73648"
+                                                             WidthRequest="25" RingThickness="5" Progress="{Binding HP}" HorizontalOptions="EndAndExpand" RingBaseColor="#E7E7E6" />
+                                    </StackLayout>
+                                    <StackLayout Orientation="Horizontal">
+                                        <Label TextColor="#e7e7e6" FontSize="Body" FontAttributes="Bold"
+                                               Text="Attack">
+                                        </Label>
+                                        <plugin:ProgressRing HeightRequest="25" RingProgressColor="#c73648"
+                                                             WidthRequest="25" RingThickness="5" Progress="{Binding Attack}" HorizontalOptions="EndAndExpand" RingBaseColor="#E7E7E6" />
+                                    </StackLayout>
+                                    <StackLayout Orientation="Horizontal">
+                                        <Label TextColor="#e7e7e6" FontSize="Body" FontAttributes="Bold"
+                                               Text="Defense">
+                                        </Label>
+                                        <plugin:ProgressRing HeightRequest="25" RingProgressColor="#c73648"
+                                                             WidthRequest="25" RingThickness="5" Progress="{Binding Defense}" HorizontalOptions="EndAndExpand" RingBaseColor="#E7E7E6" />
+                                    </StackLayout>
+                                    <StackLayout Orientation="Horizontal">
+                                        <Label TextColor="#e7e7e6" FontSize="Body" FontAttributes="Bold"
+                                               Text="Special Attack">
+                                        </Label>
+                                        <plugin:ProgressRing HeightRequest="25" RingProgressColor="#c73648"
+                                                             WidthRequest="25" RingThickness="5" Progress="{Binding SpecialAttack}" HorizontalOptions="EndAndExpand" RingBaseColor="#E7E7E6" />
+                                    </StackLayout>
+                                    <StackLayout Orientation="Horizontal">
+                                        <Label TextColor="#e7e7e6" FontSize="Body" FontAttributes="Bold"
+                                               Text="Special Defense">
+                                        </Label>
+                                        <plugin:ProgressRing HeightRequest="25" RingProgressColor="#c73648"
+                                                             WidthRequest="25" RingThickness="5" Progress="{Binding SpecialDefense}" HorizontalOptions="EndAndExpand" RingBaseColor="#E7E7E6" />
+                                    </StackLayout>
+                                    <StackLayout Orientation="Horizontal">
+                                        <Label TextColor="#e7e7e6" FontSize="Body" FontAttributes="Bold"
+                                               Text=" Speed">
+                                        </Label>
+                                        <plugin:ProgressRing HeightRequest="25" RingProgressColor="#c73648"
+                                                             WidthRequest="25" RingThickness="5" Progress="{Binding Speed}" HorizontalOptions="EndAndExpand" RingBaseColor="#E7E7E6" />
+                                    </StackLayout>
                                 </StackLayout>
                             </Frame>
                         </StackLayout>
-                        <plugin:ProgressRing   HeightRequest="50" RingProgressColor="Orange" WidthRequest="50" RingThickness="5" Progress="0.5"/>
                     </StackLayout>
                 </Frame>
             </ScrollView>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
-    

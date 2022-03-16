@@ -5,14 +5,16 @@
     <ContentPage.Content>
         <FlexLayout BackgroundColor="#6a6b6a" Direction="Column">
             <Frame
-                BackgroundColor="#c73648"   
+                BackgroundColor="#c73648"
                 CornerRadius="15"
                 Padding="0,0,0,0"
                 Margin="10,10,10,0">
                 <Label Text="PokeDia"
-                TextColor="#e7e7e6"
-                   FontSize="50"
-                   HorizontalTextAlignment="Center"/>
+                       TextColor="#e7e7e6"
+                       FontSize="50"
+                       HorizontalTextAlignment="Center"
+                       VerticalTextAlignment="Center" 
+                       Style="{StaticResource PokemonFont}"/>
             </Frame>
 
             <Image FlexLayout.Basis="30%" HorizontalOptions="CenterAndExpand" Source="PokedexHomeIcon.png"></Image>

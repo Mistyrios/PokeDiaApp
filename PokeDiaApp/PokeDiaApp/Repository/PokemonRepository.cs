@@ -9,7 +9,6 @@ namespace PokeDiaApp.Repository
     public class PokemonRepository
     {
         private SQLiteAsyncConnection connection;
-        private Task<Int32> result;
         public String MessageToShow { get; private set; }
 
         public PokemonRepository(String DataBasePath)
@@ -20,8 +19,9 @@ namespace PokeDiaApp.Repository
 
         public async Task AddPokemon(Pokemon PokemonToAdd)
         {
+            int result = 0;
             try {
-                result = connection.InsertAsync(PokemonToAdd);
+                result = await connection.InsertAsync(PokemonToAdd);
                 MessageToShow = $"votre pokémon a bien été ajouté";
             }
             catch (Exception exception) {
@@ -34,16 +34,11 @@ namespace PokeDiaApp.Repository
             try {
                 return await connection.Table<Pokemon>().ToListAsync();
             }
-            catch {
-                MessageToShow = $"[ERREUR] : impossible d'afficher la liste veuillez relancer l'application";
+            catch (Exception ex) {
+                MessageToShow = $"[ERREUR] :  {ex.Message}";
             }
 
             return new List<Pokemon>();
-        }
-
-        public async Task RemovePokemon(Pokemon PokemonToRemove)
-        {
-
         }
     }
 }

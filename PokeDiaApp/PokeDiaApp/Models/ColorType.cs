@@ -4,7 +4,7 @@ using System.Text;
 
 namespace PokeDiaApp.Models
 {
-    public class CouleurType
+    public class ColorType
     {
         public static readonly Dictionary<string, string> ColorDictionary = new Dictionary<string, string>
         {

@@ -3,6 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="PokeDiaApp.App">
     <Application.Resources>
-
+        <Style x:Key="PokemonFont" TargetType="Label">
+            <Setter Property="FontFamily" Value="unown.ttf#unown.ttf"/>
+        </Style>
     </Application.Resources>
 </Application>

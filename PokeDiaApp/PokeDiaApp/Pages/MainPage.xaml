@@ -16,19 +16,19 @@
     </Shell.Resources>
 
     <TabBar>
-        <ShellContent Title="Acceuil"
+        <ShellContent Title="Home"
             Icon="Home_Icon.png">
             <pokediaapp:HomePage/>
         </ShellContent>
-        <ShellContent Title="Pokédex"
+        <ShellContent Title="Pokedex"
             Icon="Pokedex_Icon.png">
             <pokediaapp:PokedexPage />
         </ShellContent>
-        <ShellContent Title="Ajouter"
+        <ShellContent Title="Add"
             Icon="PLus_Icon.png">
             <pokediaapp:AddPage />
         </ShellContent>
-        <ShellContent Title="Equipes"
+        <ShellContent Title="Teams"
             Icon="PokeBall_Icon.png">
             <pokediaapp:TeamPage />
         </ShellContent>
