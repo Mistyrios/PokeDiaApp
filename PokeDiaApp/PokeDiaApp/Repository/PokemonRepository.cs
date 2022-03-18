@@ -11,12 +11,16 @@ namespace PokeDiaApp.Repository
         private SQLiteAsyncConnection connection;
         public String MessageToShow { get; private set; }
 
+        //initialise the connection with de database and create the table name 'Pokemon'
         public PokemonRepository(String DataBasePath)
         {
             connection = new SQLiteAsyncConnection(DataBasePath);
             connection.CreateTableAsync<Pokemon>();
         }
 
+        //try to add the pokemon to the database
+        //if it work we have a message and
+        //if it doesn't work we have an error message
         public async Task AddPokemon(Pokemon PokemonToAdd)
         {
             int result = 0;
@@ -29,6 +33,9 @@ namespace PokeDiaApp.Repository
             }
         }
 
+        //try to establish the connection with the database
+        //if it work it create the pokemin list
+        //if it doesn't work we have an error message
         public async Task<List<Pokemon>> GetAll()
         {
             try {
