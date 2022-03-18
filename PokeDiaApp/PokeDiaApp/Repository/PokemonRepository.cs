@@ -22,10 +22,10 @@ namespace PokeDiaApp.Repository
             int result = 0;
             try {
                 result = await connection.InsertAsync(PokemonToAdd);
-                MessageToShow = $"votre pokémon a bien été ajouté";
+                MessageToShow = $"Your pokemon has been added !";
             }
             catch (Exception exception) {
-                MessageToShow = $"votre pokémon n'a pas été ajouté veuillez réessayer \n [Erreur] : {exception.Message}";
+                MessageToShow = $"Your pokemon has not been added please try again \n [Error] :  {exception.Message}";
             }
         }
 
@@ -34,8 +34,8 @@ namespace PokeDiaApp.Repository
             try {
                 return await connection.Table<Pokemon>().ToListAsync();
             }
-            catch (Exception ex) {
-                MessageToShow = $"[ERREUR] :  {ex.Message}";
+            catch (Exception exception) {
+                MessageToShow = $"Unable to display the list please try again \n [Error] :  {exception.Message}";
             }
 
             return new List<Pokemon>();

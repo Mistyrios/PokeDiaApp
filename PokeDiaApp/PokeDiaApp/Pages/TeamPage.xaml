@@ -16,12 +16,54 @@
                        VerticalTextAlignment="Center" 
                        Style="{StaticResource PokemonFont}"/>
             </Frame>
-
-            <Label 
-                TextColor="#e7e7e6"
-                Text="Welcome to Team Page"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <ScrollView>
+                <Frame CornerRadius="25" Background="#e7e7e6">
+                    <StackLayout VerticalOptions="StartAndExpand" HorizontalOptions="CenterAndExpand" Spacing="15">
+                        <StackLayout Orientation="Horizontal" Spacing="15">
+                            <Frame BackgroundColor="#838383" CornerRadius="30">
+                                <Image HeightRequest="100" WidthRequest="100"
+                                       HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"
+                                       Source="{Binding UrlFront}" Scale="1.5">
+                                </Image>
+                            </Frame>
+                            <Frame BackgroundColor="#838383" CornerRadius="30">
+                                <Image BackgroundColor="#838383" HeightRequest="100" WidthRequest="100"
+                                       HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"
+                                       Source="{Binding UrlBack}" Scale="1.5">
+                                </Image>
+                            </Frame>
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal" Spacing="15">
+                            <Frame BackgroundColor="#838383" CornerRadius="30">
+                                <Image HeightRequest="100" WidthRequest="100"
+                                       HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"
+                                       Source="{Binding UrlShinyFront}" Scale="1.5">
+                                </Image>
+                            </Frame>
+                            <Frame BackgroundColor="#838383" CornerRadius="30">
+                                <Image BackgroundColor="#838383" HeightRequest="100" WidthRequest="100"
+                                       HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"
+                                       Source="{Binding UrlShinyBack}" Scale="1.5">
+                                </Image>
+                            </Frame>
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal" Spacing="15">
+                            <Frame BackgroundColor="#838383" CornerRadius="30">
+                                <Image HeightRequest="100" WidthRequest="100"
+                                       HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"
+                                       Source="{Binding UrlShinyFront}" Scale="1.5">
+                                </Image>
+                            </Frame>
+                            <Frame BackgroundColor="#838383" CornerRadius="30">
+                                <Image BackgroundColor="#838383" HeightRequest="100" WidthRequest="100"
+                                       HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"
+                                       Source="{Binding UrlShinyBack}" Scale="1.5">
+                                </Image>
+                            </Frame>
+                        </StackLayout>
+                    </StackLayout>
+                </Frame>
+            </ScrollView>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

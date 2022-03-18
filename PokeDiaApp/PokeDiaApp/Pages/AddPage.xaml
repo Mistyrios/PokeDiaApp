@@ -218,7 +218,7 @@
                             </StackLayout>
 
                             <StackLayout Orientation="Horizontal">
-                                <Button TextColor="#FFFFFF" Text="Ajouter" BackgroundColor="#c73648" HeightRequest="50"
+                                <Button TextColor="#FFFFFF" Text="Add" BackgroundColor="#c73648" HeightRequest="50"
                                         WidthRequest="100" HorizontalOptions="CenterAndExpand"
                                         CornerRadius="15"
                                         Clicked="AddButtonClicked">

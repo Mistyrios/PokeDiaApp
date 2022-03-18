@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.CompilerServices;
@@ -31,12 +32,12 @@ namespace PokeDiaApp
             pokemon.Description = Description.Text;
             pokemon.Height = Convert.ToDouble(Height.Text) / 10;
             pokemon.Weight = Convert.ToDouble(Weight.Text);
-            pokemon.HP = Convert.ToDouble(HP.Text) / 100;
-            pokemon.Attack = Convert.ToDouble(Attack.Text) / 100;
-            pokemon.Defense = Convert.ToDouble(Defense.Text) / 100;
-            pokemon.SpecialAttack = Convert.ToDouble(SpecialAttack.Text) / 100;
-            pokemon.SpecialDefense = Convert.ToDouble(SpecialDefense.Text) / 100;
-            pokemon.Speed = Convert.ToDouble(Speed.Text) / 100;
+            pokemon.HP = Convert.ToDouble(HP.Text) / 255;
+            pokemon.Attack = Convert.ToDouble(Attack.Text) / 255;
+            pokemon.Defense = Convert.ToDouble(Defense.Text) / 255;
+            pokemon.SpecialAttack = Convert.ToDouble(SpecialAttack.Text) / 255;
+            pokemon.SpecialDefense = Convert.ToDouble(SpecialDefense.Text) / 255;
+            pokemon.Speed = Convert.ToDouble(Speed.Text) / 255;
             pokemon.UrlFront = FrontDefault.Text;
             pokemon.UrlBack = BackDefault.Text;
             pokemon.UrlShinyFront = FrontShiny.Text;
@@ -60,7 +61,7 @@ namespace PokeDiaApp
         private async void GetFrontDefault(object sender, EventArgs e)
         {
             if (!CrossMedia.Current.IsPickPhotoSupported) {
-                await DisplayAlert("Impossible", "Votre appareil ne prend pas en charge cette fonctionnalité!", "OK");
+                await DisplayAlert("Error", "Your device does not support this feature!", "OK");
                 return;
             }
             var file = await CrossMedia.Current.PickPhotoAsync();
@@ -72,7 +73,7 @@ namespace PokeDiaApp
         private async void GetBackDefault(object sender, EventArgs e)
         {
             if (!CrossMedia.Current.IsPickPhotoSupported) {
-                await DisplayAlert("Impossible", "Votre appareil ne prend pas en charge cette fonctionnalité!", "OK");
+                await DisplayAlert("Error", "Your device does not support this feature!", "OK");
                 return;
             }
             var file = await CrossMedia.Current.PickPhotoAsync();
@@ -84,7 +85,7 @@ namespace PokeDiaApp
         private async void GetFrontShiny(object sender, EventArgs e)
         {
             if (!CrossMedia.Current.IsPickPhotoSupported) {
-                await DisplayAlert("Impossible", "Votre appareil ne prend pas en charge cette fonctionnalité!", "OK");
+                await DisplayAlert("Error", "Your device does not support this feature!", "OK"); ;
                 return;
             }
             var file = await CrossMedia.Current.PickPhotoAsync();
@@ -96,7 +97,7 @@ namespace PokeDiaApp
         private async void GetBackShiny(object sender, EventArgs e)
         {
             if (!CrossMedia.Current.IsPickPhotoSupported) {
-                await DisplayAlert("Impossible", "Votre appareil ne prend pas en charge cette fonctionnalité!", "OK");
+                await DisplayAlert("Error", "Your device does not support this feature!", "OK");
                 return;
             }
             var file = await CrossMedia.Current.PickPhotoAsync();

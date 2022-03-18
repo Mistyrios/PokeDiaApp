@@ -77,15 +77,19 @@ namespace PokeDiaApp.ViewModel
                     mypokemon.Height = (double)pokemon.Height / 10;
                     mypokemon.Weight = (double)pokemon.Weight / 10;
 
-                    mypokemon.HP = (double) pokemon.Stats[0].BaseStat / 100;
-                    mypokemon.Attack = (double) pokemon.Stats[1].BaseStat / 100;
-                    mypokemon.Defense = (double) pokemon.Stats[2].BaseStat / 100;
-                    mypokemon.SpecialAttack = (double) pokemon.Stats[3].BaseStat / 100;
-                    mypokemon.SpecialDefense = (double) pokemon.Stats[4].BaseStat / 100;
-                    mypokemon.Speed = (double) pokemon.Stats[5].BaseStat / 100;
-
+                    mypokemon.HP = (double) pokemon.Stats[0].BaseStat / 255;
+                    mypokemon.Attack = (double) pokemon.Stats[1].BaseStat / 255;
+                    mypokemon.Defense = (double) pokemon.Stats[2].BaseStat / 255;
+                    mypokemon.SpecialAttack = (double) pokemon.Stats[3].BaseStat / 255;
+                    mypokemon.SpecialDefense = (double) pokemon.Stats[4].BaseStat / 255;
+                    mypokemon.Speed = (double) pokemon.Stats[5].BaseStat / 255;
                     await App.PokemonRepo.AddPokemon(mypokemon);
-                    MyList.Add(mypokemon);
+                    if (i <= 50) {
+                        MyList.Add(mypokemon);
+                    }
+                    else {
+                        MyList.Insert(0,mypokemon);
+                    }
                 }
             }
         }

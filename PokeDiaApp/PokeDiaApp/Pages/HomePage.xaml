@@ -23,31 +23,31 @@
                 <Label  
                 TextColor="#e7e7e6"
                 HorizontalTextAlignment="Center"
-                Text="Pokédia est une application non-officielle recréant un pokédex. Elle contient les données détaillées de chaque Pokémon de Pokémon Rouge à Pokémon légendes : Arceus"
+                Text="Pokedia is an unofficial application recreating a pokédex. It contains the detailed data of each Pokémon from Pokémon Red to Pokémon Legends: Arceus"
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand" />
                 <Label
                 TextColor="#e7e7e6"
                 HorizontalTextAlignment="Center"
-                Text="Elle possède donc plusieurs onglets qui vous seront utiles lors de vos aventures :"
+                Text="It has several tabs that will be useful during your adventures:"
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand" />
                 <Label  
                 TextColor="#e7e7e6"
                 HorizontalTextAlignment="Center"
-                Text="Un Pokédex qui vous permettra de vous renseigner en détails sur les Pokémons des différentes versions."
+                Text="A Pokedex that will allow you to learn in detail about the Pokémon of the different versions."
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand" />
                 <Label
                 TextColor="#e7e7e6"
                 HorizontalTextAlignment="Center"
-                Text="Un onglet vous permettant d'ajouter un Pokémon dans votre pokédex si celui-ci n'y est pas encore disponible."
+                Text="A tab allowing you to add a Pokémon to your pokédex if it is not yet available there."
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand" />
                 <Label
                 TextColor="#e7e7e6"
                 HorizontalTextAlignment="Center"
-                Text="Enfin un onglet vous permettant d'y enregistrer vos équipes des différentes versions."
+                Text="Finally a tab allowing you to register your teams of the different versions."
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand" />
             </StackLayout>
