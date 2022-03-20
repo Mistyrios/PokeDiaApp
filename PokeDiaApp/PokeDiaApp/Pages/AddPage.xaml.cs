@@ -16,11 +16,11 @@ namespace PokeDiaApp
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class AddPage : ContentPage
     {
-
         public AddPage()
         {
             InitializeComponent();
         }
+
         //First take all the data that was entered about the pokemon and
         //Add the pokemon in the database when the add button is clicked
         //there is a verification about type because one pokemon can have 2 or only one type.
@@ -53,12 +53,13 @@ namespace PokeDiaApp
             await App.PokemonRepo.AddPokemon(pokemon);
             List<Pokemon> pokemons_bd = await App.PokemonRepo.GetAll();
             ListViewModel.Instance.MyList.Clear();
+            int i = 0;
             foreach (var poke in pokemons_bd) {
-                ListViewModel.Instance.MyList.Add(poke);
+                ListViewModel.Instance.MyList.Insert(0, poke);
             }
+
             await Navigation.PushAsync(new AddPage());
             await DisplayAlert("Ajout", App.PokemonRepo.MessageToShow, "OK");
-
         }
 
         //this four methods verify that we can acces to the photos of the phone
@@ -70,42 +71,50 @@ namespace PokeDiaApp
                 await DisplayAlert("Error", "Your device does not support this feature!", "OK");
                 return;
             }
+
             var file = await CrossMedia.Current.PickPhotoAsync();
             if (file == null)
                 return;
             imageFrontDefault.Source = ImageSource.FromStream(() => file.GetStream());
             FrontDefault.Text = file.Path;
         }
+
         private async void GetBackDefault(object sender, EventArgs e)
         {
             if (!CrossMedia.Current.IsPickPhotoSupported) {
                 await DisplayAlert("Error", "Your device does not support this feature!", "OK");
                 return;
             }
+
             var file = await CrossMedia.Current.PickPhotoAsync();
             if (file == null)
                 return;
             imageBackDefault.Source = ImageSource.FromStream(() => file.GetStream());
             BackDefault.Text = file.Path;
         }
+
         private async void GetFrontShiny(object sender, EventArgs e)
         {
             if (!CrossMedia.Current.IsPickPhotoSupported) {
-                await DisplayAlert("Error", "Your device does not support this feature!", "OK"); ;
+                await DisplayAlert("Error", "Your device does not support this feature!", "OK");
+                ;
                 return;
             }
+
             var file = await CrossMedia.Current.PickPhotoAsync();
             if (file == null)
                 return;
             imageFrontShiny.Source = ImageSource.FromStream(() => file.GetStream());
             FrontShiny.Text = file.Path;
         }
+
         private async void GetBackShiny(object sender, EventArgs e)
         {
             if (!CrossMedia.Current.IsPickPhotoSupported) {
                 await DisplayAlert("Error", "Your device does not support this feature!", "OK");
                 return;
             }
+
             var file = await CrossMedia.Current.PickPhotoAsync();
             if (file == null)
                 return;

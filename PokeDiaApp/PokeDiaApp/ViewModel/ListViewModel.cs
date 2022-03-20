@@ -36,7 +36,7 @@ namespace PokeDiaApp.ViewModel
             List<Pokemon> listOfPokemon = await App.PokemonRepo.GetAll();
             if (listOfPokemon.Count != 0) {
                 foreach (Pokemon pokemon in listOfPokemon) {
-                    MyList.Add(pokemon);
+                    MyList.Insert(0,pokemon);
                 }
             }
             else {
@@ -91,13 +91,7 @@ namespace PokeDiaApp.ViewModel
                     mypokemon.Speed = (double) pokemon.Stats[5].BaseStat / 255;
                     mypokemon.Team = 0;
                     await App.PokemonRepo.AddPokemon(mypokemon);
-                    if (i <= 50) {
-                        MyList.Add(mypokemon);
-                    }
-                    else {
-                        MyList.Insert(0,mypokemon);
-                    }
-                    
+                    MyList.Insert(0, mypokemon);
                 }
             }
         }
