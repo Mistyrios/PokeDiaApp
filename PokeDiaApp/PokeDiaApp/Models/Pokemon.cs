@@ -33,5 +33,6 @@ namespace PokeDiaApp
         public double SpecialDefense { get; set; }
         public double SpecialAttack { get; set; }
         public double Speed { get; set; }
+        public double Team { get; set; }
     }
 }

@@ -34,7 +34,7 @@ namespace PokeDiaApp.Repository
         }
 
         //try to establish the connection with the database
-        //if it work it create the pokemin list
+        //if it work it create the pokemon list
         //if it doesn't work we have an error message
         public async Task<List<Pokemon>> GetAll()
         {

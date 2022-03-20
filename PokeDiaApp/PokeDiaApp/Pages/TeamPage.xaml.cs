@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using PokeDiaApp.ViewModel;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -15,6 +15,7 @@ namespace PokeDiaApp
         public TeamPage()
         {
             InitializeComponent();
+            BindingContext = TeamViewModel.Instance;
         }
     }
 }

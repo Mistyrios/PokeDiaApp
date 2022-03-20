@@ -89,6 +89,7 @@ namespace PokeDiaApp.ViewModel
                     mypokemon.SpecialAttack = (double) pokemon.Stats[3].BaseStat / 255;
                     mypokemon.SpecialDefense = (double) pokemon.Stats[4].BaseStat / 255;
                     mypokemon.Speed = (double) pokemon.Stats[5].BaseStat / 255;
+                    mypokemon.Team = 0;
                     await App.PokemonRepo.AddPokemon(mypokemon);
                     if (i <= 50) {
                         MyList.Add(mypokemon);
@@ -96,6 +97,7 @@ namespace PokeDiaApp.ViewModel
                     else {
                         MyList.Insert(0,mypokemon);
                     }
+                    
                 }
             }
         }
