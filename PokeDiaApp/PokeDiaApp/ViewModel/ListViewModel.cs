@@ -23,6 +23,12 @@ namespace PokeDiaApp.ViewModel
             InitList();
         }
 
+        //initialise the connection with the PokeApi
+        //check if there is pokemons in the database if there is it show them in the list
+        //else it take the 50 first pokemons give by the API, check if the pokemon has one or two types
+        //because if we don't check the application crash when the pokemon has only one type
+        //we also check when the pokemon number is higher than 31 in the API
+        //because from 31's there is no descritption set and then the application crash
         public async void InitList()
         {
             PokeApiClient pokeClientPokemon = new PokeApiClient();

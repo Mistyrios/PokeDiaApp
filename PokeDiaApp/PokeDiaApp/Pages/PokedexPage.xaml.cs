@@ -17,6 +17,7 @@ namespace PokeDiaApp
             BindingContext = ListViewModel.Instance;
         }
  
+        //this method select the pokemon that we clicked on and open the corresponding detail page with all the informations
         async void Selection(object sender, SelectionChangedEventArgs e)
         {
             Pokemon selectedPokemon = (e.CurrentSelection.FirstOrDefault() as Pokemon);

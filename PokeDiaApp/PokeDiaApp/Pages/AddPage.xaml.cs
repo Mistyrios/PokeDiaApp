@@ -1,5 +1,4 @@
-﻿
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.CompilerServices;
@@ -22,7 +21,10 @@ namespace PokeDiaApp
         {
             InitializeComponent();
         }
-
+        //First take all the data that was entered about the pokemon and
+        //Add the pokemon in the database when the add button is clicked
+        //there is a verification about type because one pokemon can have 2 or only one type.
+        //Finally redirect to an other add page
         private async void AddButtonClicked(object sender, EventArgs e)
         {
             Pokemon pokemon = new Pokemon();
@@ -66,6 +68,10 @@ namespace PokeDiaApp
             await DisplayAlert("Ajout", App.PokemonRepo.MessageToShow, "OK");
 
         }
+
+        //this four methods verify that we can acces to the photos of the phone
+        //if we can the user can select the photo that he want and add it for the pokemon
+        //then add the path of the picture to a fake label to be able to get the path everywhere
         private async void GetFrontDefault(object sender, EventArgs e)
         {
             if (!CrossMedia.Current.IsPickPhotoSupported) {
