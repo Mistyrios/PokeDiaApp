@@ -51,8 +51,16 @@ namespace PokeDiaApp
             await App.PokemonRepo.AddPokemon(pokemon);
             List<Pokemon> pokemons_bd = await App.PokemonRepo.GetAll();
             ListViewModel.Instance.MyList.Clear();
+            int i = 0;
             foreach (var poke in pokemons_bd) {
-                ListViewModel.Instance.MyList.Add(poke);
+                i = i++;
+                if (i <= 50) {
+                    ListViewModel.Instance.MyList.Add(poke);
+                }
+                else {
+                    ListViewModel.Instance.MyList.Insert(0,poke);
+                }
+                
             }
             await Navigation.PushAsync(new AddPage());
             await DisplayAlert("Ajout", App.PokemonRepo.MessageToShow, "OK");
