@@ -59,7 +59,7 @@ namespace PokeDiaApp
             }
 
             await Navigation.PushAsync(new AddPage());
-            await DisplayAlert("Ajout", App.PokemonRepo.MessageToShow, "OK");
+            await DisplayAlert("Add", App.PokemonRepo.MessageToShow, "OK");
         }
 
         //this four methods verify that we can acces to the photos of the phone

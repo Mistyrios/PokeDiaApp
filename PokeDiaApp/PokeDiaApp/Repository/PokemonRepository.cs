@@ -18,6 +18,12 @@ namespace PokeDiaApp.Repository
             connection.CreateTableAsync<Pokemon>();
         }
 
+        public async void Clear()
+        {
+             await connection.DropTableAsync<Pokemon>();
+             connection.CreateTableAsync<Pokemon>(); 
+        }
+
         //try to add the pokemon to the database
         //if it work we have a message and
         //if it doesn't work we have an error message

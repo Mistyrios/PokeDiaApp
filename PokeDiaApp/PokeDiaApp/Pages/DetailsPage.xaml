@@ -136,20 +136,7 @@
                                 </StackLayout>
                             </Frame>
                         </StackLayout>
-                        <Picker WidthRequest="135" x:Name="Team" Title="Team :"
-                                        HorizontalTextAlignment="Center">
-                            <Picker.ItemsSource>
-                                <x:Array Type="{x:Type x:String}">
-                                    <x:String></x:String>
-                                    <x:String>1</x:String>
-                                    <x:String>2</x:String>
-                                    <x:String>3</x:String>
-                                    <x:String>4</x:String>
-                                    <x:String>5</x:String>
-                                </x:Array>
-                            </Picker.ItemsSource>
-                        </Picker>
-                        <Button Text="Add to a team" BackgroundColor="#c73648" 
+                        <Button Text="Add to your team" BackgroundColor="#c73648" 
                                 HeightRequest="50" WidthRequest="100" Clicked="AddToTeamButtonClicked"></Button>
                     </StackLayout>
                 </Frame>

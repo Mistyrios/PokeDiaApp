@@ -16,119 +16,32 @@
                        VerticalTextAlignment="Center" 
                        Style="{StaticResource PokemonFont}"/>
             </Frame>
-            <ScrollView>
-                <StackLayout>
+            <StackLayout>
                     <Frame CornerRadius="25" Background="#e7e7e6">
                         <StackLayout>
                             <Label Text="Team #1" FontSize="Title" FontAttributes="Bold" TextColor="black" HorizontalTextAlignment="Center"></Label>
-                            <CollectionView x:Name="FirstTeamList" ItemsSource="{Binding MyFavoriteList}" Margin="10,0">
+                            <CollectionView x:Name="FirstTeamList" ItemsSource="{Binding MyFavoriteList}" Margin="15,0">
                                 <CollectionView.ItemsLayout>
                                     <GridItemsLayout Orientation="Vertical" Span="2" VerticalItemSpacing="10"/>
                                 </CollectionView.ItemsLayout>
                                 <CollectionView.ItemTemplate>
                                     <DataTemplate>
-                                        <StackLayout Orientation="Horizontal" Spacing="15">
-                                            <Frame BackgroundColor="#838383" CornerRadius="30">
-                                                <Image HeightRequest="100" WidthRequest="100"
+                                    <StackLayout Orientation="Horizontal" Spacing="15">
+                                        <Frame BackgroundColor="#838383" CornerRadius="30">
+                                            <Image HeightRequest="100" WidthRequest="100"
                                                     HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"
                                                     Source="{Binding UrlFront}" Scale="1.5">
-                                                </Image>
-                                            </Frame>
-                                        </StackLayout>
-                                    </DataTemplate>
+                                            </Image>
+                                        </Frame>
+                                    </StackLayout>
+                                </DataTemplate>
                                 </CollectionView.ItemTemplate>
                             </CollectionView>
                         </StackLayout>
                     </Frame>
-                    <Frame CornerRadius="25" Background="#e7e7e6">
-                        <StackLayout>
-                            <Label Text="Team #2" FontSize="Title" FontAttributes="Bold" TextColor="black" HorizontalTextAlignment="Center"></Label>
-                            <CollectionView x:Name="SecondTeamList" ItemsSource="{Binding MyFavoriteList}" Margin="10,0">
-                                <CollectionView.ItemsLayout>
-                                    <GridItemsLayout Orientation="Vertical" Span="2" VerticalItemSpacing="10"/>
-                                </CollectionView.ItemsLayout>
-                                <CollectionView.ItemTemplate>
-                                    <DataTemplate>
-                                        <StackLayout Orientation="Horizontal" Spacing="15">
-                                            <Frame BackgroundColor="#838383" CornerRadius="30">
-                                                <Image HeightRequest="100" WidthRequest="100"
-                                                    HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"
-                                                    Source="{Binding UrlFront}" Scale="1.5">
-                                                </Image>
-                                            </Frame>
-                                        </StackLayout>
-                                    </DataTemplate>
-                                </CollectionView.ItemTemplate>
-                            </CollectionView>
-                        </StackLayout>
-                    </Frame> 
-                    <Frame CornerRadius="25" Background="#e7e7e6">
-                        <StackLayout>
-                            <Label Text="Team #3" FontSize="Title" FontAttributes="Bold" TextColor="black" HorizontalTextAlignment="Center"></Label>
-                            <CollectionView x:Name="ThirdTeamList" ItemsSource="{Binding MyFavoriteList}" Margin="10,0">
-                                <CollectionView.ItemsLayout>
-                                    <GridItemsLayout Orientation="Vertical" Span="2" VerticalItemSpacing="10"/>
-                                </CollectionView.ItemsLayout>
-                                <CollectionView.ItemTemplate>
-                                    <DataTemplate>
-                                        <StackLayout Orientation="Horizontal" Spacing="15">
-                                            <Frame BackgroundColor="#838383" CornerRadius="30">
-                                                <Image HeightRequest="100" WidthRequest="100"
-                                                    HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"
-                                                    Source="{Binding UrlFront}" Scale="1.5">
-                                                </Image>
-                                            </Frame>
-                                        </StackLayout>
-                                    </DataTemplate>
-                                </CollectionView.ItemTemplate>
-                            </CollectionView>
-                        </StackLayout>
-                    </Frame> <Frame CornerRadius="25" Background="#e7e7e6">
-                        <StackLayout>
-                            <Label Text="Team #4" FontSize="Title" FontAttributes="Bold" TextColor="black" HorizontalTextAlignment="Center"></Label>
-                            <CollectionView x:Name="FourthTeamList" ItemsSource="{Binding MyFavoriteList}" Margin="10,0">
-                                <CollectionView.ItemsLayout>
-                                    <GridItemsLayout Orientation="Vertical" Span="2" VerticalItemSpacing="10"/>
-                                </CollectionView.ItemsLayout>
-                                <CollectionView.ItemTemplate>
-                                    <DataTemplate>
-                                        <StackLayout Orientation="Horizontal" Spacing="15">
-                                            <Frame BackgroundColor="#838383" CornerRadius="30">
-                                                <Image HeightRequest="100" WidthRequest="100"
-                                                    HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"
-                                                    Source="{Binding UrlFront}" Scale="1.5">
-                                                </Image>
-                                            </Frame>
-                                        </StackLayout>
-                                    </DataTemplate>
-                                </CollectionView.ItemTemplate>
-                            </CollectionView>
-                        </StackLayout>
-                    </Frame>
-                    <Frame CornerRadius="25" Background="#e7e7e6">
-                        <StackLayout>
-                            <Label Text="Team #5" FontSize="Title" FontAttributes="Bold" TextColor="black" HorizontalTextAlignment="Center"></Label>
-                            <CollectionView x:Name="FifthTeamList" ItemsSource="{Binding MyFavoriteList}" Margin="10,0">
-                                <CollectionView.ItemsLayout>
-                                    <GridItemsLayout Orientation="Vertical" Span="2" VerticalItemSpacing="10"/>
-                                </CollectionView.ItemsLayout>
-                                <CollectionView.ItemTemplate>
-                                    <DataTemplate>
-                                        <StackLayout Orientation="Horizontal" Spacing="15">
-                                            <Frame BackgroundColor="#838383" CornerRadius="30">
-                                                <Image HeightRequest="100" WidthRequest="100"
-                                                    HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"
-                                                    Source="{Binding UrlFront}" Scale="1.5">
-                                                </Image>
-                                            </Frame>
-                                        </StackLayout>
-                                    </DataTemplate>
-                                </CollectionView.ItemTemplate>
-                            </CollectionView>
-                        </StackLayout>
-                    </Frame>
+                <Button Text="Clear your team" Clicked="ClearAfterClick"></Button>
                 </StackLayout>
-            </ScrollView>              
+            
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

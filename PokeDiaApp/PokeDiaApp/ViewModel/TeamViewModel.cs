@@ -17,7 +17,6 @@ namespace PokeDiaApp.ViewModel
         public TeamViewModel()
         {
             MyFavoriteList = new ObservableCollection<Pokemon>();
-
             InitTeam();
         }
 

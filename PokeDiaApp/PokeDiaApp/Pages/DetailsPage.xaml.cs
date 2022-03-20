@@ -13,6 +13,7 @@ namespace PokeDiaApp
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class DetailsPage : ContentPage
     {
+        private const Int32 TEAM = 1;
         private Pokemon myPokemon;
         public DetailsPage(Pokemon pokemon)
         {
@@ -25,60 +26,15 @@ namespace PokeDiaApp
         {
             Pokemon pokemon = new Pokemon();
             pokemon = myPokemon;
-            pokemon.Team = Team.SelectedIndex;
-            switch(Team.SelectedIndex){
-                case 1:
-
-                    break;
-                case 2:
-
-                    break;
-                case 3:
-
-                    break;
-                case 4:
-
-                    break;
-                case 5:
-
-                    break;
-                case 6:
-
-                    break;
-                case 7:
-
-                    break;
-                case 8:
-
-                    break;
-                case 9:
-
-                    break;
-                case 10:
-
-                    break;
-                case 11:
-
-                    break;
-                case 12:
-
-                    break;
-                case 13:
-
-                    break;
-                case 14:
-
-                    break;
-                case 15:
-
-                    break;
-                case 16:
-
-                    break;
-                
+            pokemon.Team = TEAM;
+            await App.FavoritePokemonRepo.AddPokemon(pokemon);
+            List<Pokemon> favoritePokemons_bd = await App.FavoritePokemonRepo.GetAll();
+            TeamViewModel.Instance.MyFavoriteList.Clear();
+            foreach (var poke in favoritePokemons_bd) {
+                TeamViewModel.Instance.MyFavoriteList.Add(poke);
             }
-                
-           
+            await DisplayAlert("Add", App.FavoritePokemonRepo.MessageToShow, "OK");
         }
+      
     }
 }

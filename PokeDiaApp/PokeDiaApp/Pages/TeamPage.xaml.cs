@@ -17,5 +17,11 @@ namespace PokeDiaApp
             InitializeComponent();
             BindingContext = TeamViewModel.Instance;
         }
+
+        public void ClearAfterClick(object sender, EventArgs e)
+        {
+            App.FavoritePokemonRepo.Clear();
+            TeamViewModel.Instance.MyFavoriteList.Clear();
+        }
     }
 }
