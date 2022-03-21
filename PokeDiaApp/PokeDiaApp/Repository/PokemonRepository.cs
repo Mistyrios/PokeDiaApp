@@ -18,10 +18,11 @@ namespace PokeDiaApp.Repository
             connection.CreateTableAsync<Pokemon>();
         }
 
+        //This method allows to empty the pokemon table
         public async void Clear()
         {
              await connection.DropTableAsync<Pokemon>();
-             connection.CreateTableAsync<Pokemon>(); 
+             await connection.CreateTableAsync<Pokemon>(); 
         }
 
         //try to add the pokemon to the database

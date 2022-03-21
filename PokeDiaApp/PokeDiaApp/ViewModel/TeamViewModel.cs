@@ -20,6 +20,9 @@ namespace PokeDiaApp.ViewModel
             InitTeam();
         }
 
+        //This method initializes the team by retrieving all the pokemons and storing them in a list
+        //If the list is empty we do nothing
+        //So for each pokemon we add it in our team
         public async void InitTeam()
         {
             List<Pokemon> listOfPokemon = await App.FavoritePokemonRepo.GetAll();

@@ -18,6 +18,7 @@ namespace PokeDiaApp
             BindingContext = TeamViewModel.Instance;
         }
 
+        //This method allows you to empty your team after pressing the button in order to modify or reset it
         public void ClearAfterClick(object sender, EventArgs e)
         {
             App.FavoritePokemonRepo.Clear();

@@ -18,215 +18,219 @@
                        Style="{StaticResource PokemonFont}" />
             </Frame>
             <ScrollView>
-                <StackLayout VerticalOptions="StartAndExpand" HorizontalOptions="CenterAndExpand">
-                    <Frame BackgroundColor="#E7E7E6">
-                        <StackLayout>
+                <Frame Margin="10" CornerRadius="25">
+                    <StackLayout>
 
-                            <StackLayout Margin="0,0,0,20">
-                                <Label TextColor="Black" Text="Name:" HorizontalTextAlignment="Center"></Label>
-                                <Entry x:Name="Name"></Entry>
-                            </StackLayout>
+                        <StackLayout Margin="0,0,0,20">
+                            <Label TextColor="Black" Text="Name:" HorizontalTextAlignment="Center"></Label>
+                            <Entry x:Name="Name"></Entry>
+                        </StackLayout>
 
-                            <Label x:Name="FrontDefault" IsVisible="False"></Label>
-                            <Label x:Name="BackDefault" IsVisible="False"></Label>
-                            <Label x:Name="FrontShiny" IsVisible="False"></Label>
-                            <Label x:Name="BackShiny" IsVisible="False"></Label>
+                        <Label x:Name="FrontDefault" IsVisible="False"></Label>
+                        <Label x:Name="BackDefault" IsVisible="False"></Label>
+                        <Label x:Name="FrontShiny" IsVisible="False"></Label>
+                        <Label x:Name="BackShiny" IsVisible="False"></Label>
 
-                            <StackLayout Orientation="Vertical" Spacing="25" Margin="0,0,0,20">
-                                <StackLayout Orientation="Horizontal" Spacing="25" HorizontalOptions="CenterAndExpand">
-                                    <StackLayout>
-                                        <Label TextColor="#000000" Text="Front Default:"
-                                               HorizontalOptions="CenterAndExpand">
-                                        </Label>
-                                        <Frame BackgroundColor="#838383" CornerRadius="25">
-                                            <ImageButton
-                                                BackgroundColor="#838383"
-                                                x:Name="imageFrontDefault"
-                                                HeightRequest="100"
-                                                WidthRequest="100"
-                                                HorizontalOptions="CenterAndExpand"
-                                                VerticalOptions="CenterAndExpand" Source="Add_Icon.png"
-                                                Clicked="GetFrontDefault">
-                                            </ImageButton>
-                                        </Frame>
-                                    </StackLayout>
-                                    <StackLayout>
-                                        <Label TextColor="#000000" Text="Back Default:"
-                                               HorizontalOptions="CenterAndExpand">
-                                        </Label>
-                                        <Frame BackgroundColor="#838383" CornerRadius="25">
-                                            <ImageButton
-                                                BackgroundColor="#838383"
-                                                x:Name="imageBackDefault"
-                                                HeightRequest="100"
-                                                WidthRequest="100"
-                                                HorizontalOptions="CenterAndExpand"
-                                                VerticalOptions="CenterAndExpand" Source="Add_Icon.png"
-                                                Clicked="GetBackDefault">
-                                            </ImageButton>
-                                        </Frame>
-                                    </StackLayout>
-                                </StackLayout>
-                                <StackLayout Orientation="Horizontal" Spacing="25" HorizontalOptions="CenterAndExpand">
-                                    <StackLayout>
-                                        <Label TextColor="#000000" Text="Front Shiny:"
-                                               HorizontalOptions="CenterAndExpand">
-                                        </Label>
-                                        <Frame BackgroundColor="#838383" CornerRadius="25">
-                                            <ImageButton
-                                                BackgroundColor="#838383"
-                                                x:Name="imageFrontShiny"
-                                                HeightRequest="100"
-                                                WidthRequest="100"
-                                                HorizontalOptions="CenterAndExpand"
-                                                VerticalOptions="CenterAndExpand" Source="Add_Icon.png"
-                                                Clicked="GetFrontShiny">
-                                            </ImageButton>
-                                        </Frame>
-                                    </StackLayout>
-                                    <StackLayout>
-                                        <Label TextColor="#000000" Text="Back Shiny:"
-                                               HorizontalOptions="CenterAndExpand">
-                                        </Label>
-                                        <Frame BackgroundColor="#838383" CornerRadius="25">
-                                            <ImageButton
-                                                x:Name="imageBackShiny"
-                                                BackgroundColor="#838383"
-                                                HeightRequest="100"
-                                                WidthRequest="100"
-                                                HorizontalOptions="CenterAndExpand"
-                                                VerticalOptions="CenterAndExpand" Source="Add_Icon.png"
-                                                Clicked="GetBackShiny">
-                                            </ImageButton>
-                                        </Frame>
-                                    </StackLayout>
-                                </StackLayout>
-                            </StackLayout>
-
-                            <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" Spacing="25"
-                                         Margin="0,0,0,20">
-
-                                <Picker WidthRequest="135" x:Name="FirstType" Title="Type 1:"
-                                        HorizontalTextAlignment="Center">
-                                    <Picker.ItemsSource>
-                                        <x:Array Type="{x:Type x:String}">
-                                            <x:String>Normal</x:String>
-                                            <x:String>Fire</x:String>
-                                            <x:String>Water</x:String>
-                                            <x:String>Electric</x:String>
-                                            <x:String>Grass</x:String>
-                                            <x:String>Ice</x:String>
-                                            <x:String>Fighting</x:String>
-                                            <x:String>Poison</x:String>
-                                            <x:String>Ground</x:String>
-                                            <x:String>Flying</x:String>
-                                            <x:String>Psychic</x:String>
-                                            <x:String>Bug</x:String>
-                                            <x:String>Rock</x:String>
-                                            <x:String>Ghost</x:String>
-                                            <x:String>Dragon</x:String>
-                                            <x:String>Dark</x:String>
-                                            <x:String>Steel</x:String>
-                                            <x:String>Fairy</x:String>
-                                        </x:Array>
-                                    </Picker.ItemsSource>
-                                </Picker>
-                                <Picker WidthRequest="135" x:Name="SecondType" Title="Type 2:"
-                                        HorizontalTextAlignment="Center">
-                                    <Picker.ItemsSource>
-                                        <x:Array Type="{x:Type x:String}">
-                                            <x:String>Normal</x:String>
-                                            <x:String>Fire</x:String>
-                                            <x:String>Water</x:String>
-                                            <x:String>Electric</x:String>
-                                            <x:String>Grass</x:String>
-                                            <x:String>Ice</x:String>
-                                            <x:String>Fighting</x:String>
-                                            <x:String>Poison</x:String>
-                                            <x:String>Ground</x:String>
-                                            <x:String>Flying</x:String>
-                                            <x:String>Psychic</x:String>
-                                            <x:String>Bug</x:String>
-                                            <x:String>Rock</x:String>
-                                            <x:String>Ghost</x:String>
-                                            <x:String>Dragon</x:String>
-                                            <x:String>Dark</x:String>
-                                            <x:String>Steel</x:String>
-                                            <x:String>Fairy</x:String>
-                                        </x:Array>
-                                    </Picker.ItemsSource>
-                                </Picker>
-                            </StackLayout>
-
-                            <StackLayout Margin="0,0,0,20">
-                                <Label TextColor="Black" Text="Description:" HorizontalTextAlignment="Center"></Label>
-                                <Editor x:Name="Description"></Editor>
-                            </StackLayout>
-
-
-                            <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" Spacing="25"
-                                         Margin="0,0,0,20">
+                        <StackLayout Orientation="Vertical" Spacing="25" Margin="0,0,0,20">
+                            <StackLayout Orientation="Horizontal" Spacing="25"
+                                         HorizontalOptions="CenterAndExpand">
                                 <StackLayout>
-                                    <Label TextColor="Black" Text="Height:"></Label>
-                                    <Entry Keyboard="Telephone" WidthRequest="135" x:Name="Height">
-                                    </Entry>
+                                    <Label TextColor="#000000" Text="Front Default:"
+                                           HorizontalOptions="CenterAndExpand">
+                                    </Label>
+                                    <Frame BackgroundColor="#838383" CornerRadius="25">
+                                        <ImageButton
+                                            BackgroundColor="#838383"
+                                            x:Name="imageFrontDefault"
+                                            HeightRequest="100"
+                                            WidthRequest="100"
+                                            HorizontalOptions="CenterAndExpand"
+                                            VerticalOptions="CenterAndExpand" Source="Add_Icon.png"
+                                            Clicked="GetFrontDefault">
+                                        </ImageButton>
+                                    </Frame>
                                 </StackLayout>
                                 <StackLayout>
-                                    <Label TextColor="Black" Text="Weight:"></Label>
-                                    <Entry Keyboard="Telephone" WidthRequest="135" x:Name="Weight">
-                                    </Entry>
+                                    <Label TextColor="#000000" Text="Back Default:"
+                                           HorizontalOptions="CenterAndExpand">
+                                    </Label>
+                                    <Frame BackgroundColor="#838383" CornerRadius="25">
+                                        <ImageButton
+                                            BackgroundColor="#838383"
+                                            x:Name="imageBackDefault"
+                                            HeightRequest="100"
+                                            WidthRequest="100"
+                                            HorizontalOptions="CenterAndExpand"
+                                            VerticalOptions="CenterAndExpand" Source="Add_Icon.png"
+                                            Clicked="GetBackDefault">
+                                        </ImageButton>
+                                    </Frame>
                                 </StackLayout>
                             </StackLayout>
-
-                            <StackLayout Orientation="Vertical" Spacing="10" Margin="0,0,0,20">
-                                <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" Spacing="25">
-                                    <StackLayout>
-                                        <Label TextColor="Black" Text="HP:"></Label>
-                                        <Entry Keyboard="Telephone" WidthRequest="135" x:Name="HP">
-                                        </Entry>
-                                    </StackLayout>
-                                    <StackLayout>
-                                        <Label TextColor="Black" Text="Attack:"></Label>
-                                        <Entry Keyboard="Telephone" WidthRequest="135" x:Name="Attack">
-                                        </Entry>
-                                    </StackLayout>
+                            <StackLayout Orientation="Horizontal" Spacing="25"
+                                         HorizontalOptions="CenterAndExpand">
+                                <StackLayout>
+                                    <Label TextColor="#000000" Text="Front Shiny:"
+                                           HorizontalOptions="CenterAndExpand">
+                                    </Label>
+                                    <Frame BackgroundColor="#838383" CornerRadius="25">
+                                        <ImageButton
+                                            BackgroundColor="#838383"
+                                            x:Name="imageFrontShiny"
+                                            HeightRequest="100"
+                                            WidthRequest="100"
+                                            HorizontalOptions="CenterAndExpand"
+                                            VerticalOptions="CenterAndExpand" Source="Add_Icon.png"
+                                            Clicked="GetFrontShiny">
+                                        </ImageButton>
+                                    </Frame>
                                 </StackLayout>
-                                <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" Spacing="25">
-                                    <StackLayout>
-                                        <Label TextColor="Black" Text="Defense:"></Label>
-                                        <Entry Keyboard="Telephone" WidthRequest="135" x:Name="Defense">
-                                        </Entry>
-                                    </StackLayout>
-                                    <StackLayout>
-                                        <Label TextColor="Black" Text="Special Attack:"></Label>
-                                        <Entry Keyboard="Telephone" WidthRequest="135" x:Name="SpecialAttack">
-                                        </Entry>
-                                    </StackLayout>
+                                <StackLayout>
+                                    <Label TextColor="#000000" Text="Back Shiny:"
+                                           HorizontalOptions="CenterAndExpand">
+                                    </Label>
+                                    <Frame BackgroundColor="#838383" CornerRadius="25">
+                                        <ImageButton
+                                            x:Name="imageBackShiny"
+                                            BackgroundColor="#838383"
+                                            HeightRequest="100"
+                                            WidthRequest="100"
+                                            HorizontalOptions="CenterAndExpand"
+                                            VerticalOptions="CenterAndExpand" Source="Add_Icon.png"
+                                            Clicked="GetBackShiny">
+                                        </ImageButton>
+                                    </Frame>
                                 </StackLayout>
-                                <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" Spacing="25">
-                                    <StackLayout>
-                                        <Label TextColor="Black" Text="Special Defense:"></Label>
-                                        <Entry Keyboard="Telephone" WidthRequest="135" x:Name="SpecialDefense">
-                                        </Entry>
-                                    </StackLayout>
-                                    <StackLayout>
-                                        <Label TextColor="Black" Text="Speed:"></Label>
-                                        <Entry Keyboard="Telephone" WidthRequest="135" x:Name="Speed">
-                                        </Entry>
-                                    </StackLayout>
-                                </StackLayout>
-                            </StackLayout>
-
-                            <StackLayout Orientation="Horizontal">
-                                <Button TextColor="#FFFFFF" Text="Add" BackgroundColor="#c73648" HeightRequest="50"
-                                        WidthRequest="100" HorizontalOptions="CenterAndExpand"
-                                        CornerRadius="15"
-                                        Clicked="AddButtonClicked">
-                                </Button>
                             </StackLayout>
                         </StackLayout>
-                    </Frame>
-                </StackLayout>
+
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" Spacing="25"
+                                     Margin="0,0,0,20">
+
+                            <Picker WidthRequest="135" x:Name="FirstType" Title="Type 1:"
+                                    HorizontalTextAlignment="Center">
+                                <Picker.ItemsSource>
+                                    <x:Array Type="{x:Type x:String}">
+                                        <x:String>Normal</x:String>
+                                        <x:String>Fire</x:String>
+                                        <x:String>Water</x:String>
+                                        <x:String>Electric</x:String>
+                                        <x:String>Grass</x:String>
+                                        <x:String>Ice</x:String>
+                                        <x:String>Fighting</x:String>
+                                        <x:String>Poison</x:String>
+                                        <x:String>Ground</x:String>
+                                        <x:String>Flying</x:String>
+                                        <x:String>Psychic</x:String>
+                                        <x:String>Bug</x:String>
+                                        <x:String>Rock</x:String>
+                                        <x:String>Ghost</x:String>
+                                        <x:String>Dragon</x:String>
+                                        <x:String>Dark</x:String>
+                                        <x:String>Steel</x:String>
+                                        <x:String>Fairy</x:String>
+                                    </x:Array>
+                                </Picker.ItemsSource>
+                            </Picker>
+                            <Picker WidthRequest="135" x:Name="SecondType" Title="Type 2:"
+                                    HorizontalTextAlignment="Center">
+                                <Picker.ItemsSource>
+                                    <x:Array Type="{x:Type x:String}">
+                                        <x:String>Normal</x:String>
+                                        <x:String>Fire</x:String>
+                                        <x:String>Water</x:String>
+                                        <x:String>Electric</x:String>
+                                        <x:String>Grass</x:String>
+                                        <x:String>Ice</x:String>
+                                        <x:String>Fighting</x:String>
+                                        <x:String>Poison</x:String>
+                                        <x:String>Ground</x:String>
+                                        <x:String>Flying</x:String>
+                                        <x:String>Psychic</x:String>
+                                        <x:String>Bug</x:String>
+                                        <x:String>Rock</x:String>
+                                        <x:String>Ghost</x:String>
+                                        <x:String>Dragon</x:String>
+                                        <x:String>Dark</x:String>
+                                        <x:String>Steel</x:String>
+                                        <x:String>Fairy</x:String>
+                                    </x:Array>
+                                </Picker.ItemsSource>
+                            </Picker>
+                        </StackLayout>
+
+                        <StackLayout Margin="0,0,0,20">
+                            <Label TextColor="Black" Text="Description:" HorizontalTextAlignment="Center"></Label>
+                            <Editor x:Name="Description"></Editor>
+                        </StackLayout>
+
+
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" Spacing="25"
+                                     Margin="0,0,0,20">
+                            <StackLayout>
+                                <Label TextColor="Black" Text="Height:"></Label>
+                                <Entry Keyboard="Telephone" WidthRequest="135" x:Name="Height">
+                                </Entry>
+                            </StackLayout>
+                            <StackLayout>
+                                <Label TextColor="Black" Text="Weight:"></Label>
+                                <Entry Keyboard="Telephone" WidthRequest="135" x:Name="Weight">
+                                </Entry>
+                            </StackLayout>
+                        </StackLayout>
+
+                        <StackLayout Orientation="Vertical" Spacing="10" Margin="0,0,0,20">
+                            <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand"
+                                         Spacing="25">
+                                <StackLayout>
+                                    <Label TextColor="Black" Text="HP:"></Label>
+                                    <Entry Keyboard="Telephone" WidthRequest="135" x:Name="HP">
+                                    </Entry>
+                                </StackLayout>
+                                <StackLayout>
+                                    <Label TextColor="Black" Text="Attack:"></Label>
+                                    <Entry Keyboard="Telephone" WidthRequest="135" x:Name="Attack">
+                                    </Entry>
+                                </StackLayout>
+                            </StackLayout>
+                            <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand"
+                                         Spacing="25">
+                                <StackLayout>
+                                    <Label TextColor="Black" Text="Defense:"></Label>
+                                    <Entry Keyboard="Telephone" WidthRequest="135" x:Name="Defense">
+                                    </Entry>
+                                </StackLayout>
+                                <StackLayout>
+                                    <Label TextColor="Black" Text="Special Attack:"></Label>
+                                    <Entry Keyboard="Telephone" WidthRequest="135" x:Name="SpecialAttack">
+                                    </Entry>
+                                </StackLayout>
+                            </StackLayout>
+                            <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand"
+                                         Spacing="25">
+                                <StackLayout>
+                                    <Label TextColor="Black" Text="Special Defense:"></Label>
+                                    <Entry Keyboard="Telephone" WidthRequest="135" x:Name="SpecialDefense">
+                                    </Entry>
+                                </StackLayout>
+                                <StackLayout>
+                                    <Label TextColor="Black" Text="Speed:"></Label>
+                                    <Entry Keyboard="Telephone" WidthRequest="135" x:Name="Speed">
+                                    </Entry>
+                                </StackLayout>
+                            </StackLayout>
+                        </StackLayout>
+
+                        <StackLayout Orientation="Horizontal">
+                            <Button TextColor="#FFFFFF" Text="Add" BackgroundColor="#c73648" HeightRequest="50"
+                                    WidthRequest="100" HorizontalOptions="CenterAndExpand"
+                                    CornerRadius="15"
+                                    Clicked="AddButtonClicked">
+                            </Button>
+                        </StackLayout>
+                    </StackLayout>
+                </Frame>
+
             </ScrollView>
         </StackLayout>
     </ContentPage.Content>

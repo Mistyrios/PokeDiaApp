@@ -17,16 +17,17 @@
                        TextColor="#e7e7e6"
                        FontSize="50"
                        HorizontalTextAlignment="Center"
-                       VerticalTextAlignment="Center" 
+                       VerticalTextAlignment="Center"
                        Style="{StaticResource PokemonFont}"
-                       x:Name="Name"/>
+                       x:Name="Name" />
             </Frame>
             <ScrollView>
                 <Frame Margin="10" CornerRadius="25" Background="#e7e7e6">
                     <StackLayout VerticalOptions="StartAndExpand" HorizontalOptions="CenterAndExpand">
                         <Label Text="{Binding Name}" TextColor="black" FontSize="30"
                                HorizontalOptions="CenterAndExpand" />
-                        <Label TextColor="#323233" FontSize="Large" FontAttributes="Bold" Text="{Binding Number, StringFormat='No.{0}'}"
+                        <Label TextColor="#323233" FontSize="Large" FontAttributes="Bold"
+                               Text="{Binding Number, StringFormat='No.{0}'}"
                                HorizontalOptions="CenterAndExpand">
                         </Label>
                         <StackLayout Orientation="Horizontal" Spacing="15">
@@ -70,7 +71,8 @@
                         </StackLayout>
 
                         <Frame Background="#838383" CornerRadius="15">
-                            <Label TextColor="#e7e7e6" FontSize="Body" FontAttributes="Bold" HorizontalTextAlignment="Center"
+                            <Label TextColor="#e7e7e6" FontSize="Body" FontAttributes="Bold"
+                                   HorizontalTextAlignment="Center"
                                    Text="{Binding Description}">
                             </Label>
                         </Frame>
@@ -96,48 +98,64 @@
                                     <StackLayout Orientation="Horizontal">
                                         <Label TextColor="#e7e7e6" FontSize="Body" FontAttributes="Bold" Text="HP"></Label>
                                         <plugin:ProgressRing HeightRequest="25" RingProgressColor="#c73648"
-                                                             WidthRequest="25" RingThickness="5" Progress="{Binding HP}" HorizontalOptions="EndAndExpand" RingBaseColor="#E7E7E6" />
+                                                             WidthRequest="25" RingThickness="5"
+                                                             Progress="{Binding HP}" HorizontalOptions="EndAndExpand"
+                                                             RingBaseColor="#E7E7E6" />
                                     </StackLayout>
                                     <StackLayout Orientation="Horizontal">
                                         <Label TextColor="#e7e7e6" FontSize="Body" FontAttributes="Bold"
                                                Text="Attack">
                                         </Label>
                                         <plugin:ProgressRing HeightRequest="25" RingProgressColor="#c73648"
-                                                             WidthRequest="25" RingThickness="5" Progress="{Binding Attack}" HorizontalOptions="EndAndExpand" RingBaseColor="#E7E7E6" />
+                                                             WidthRequest="25" RingThickness="5"
+                                                             Progress="{Binding Attack}"
+                                                             HorizontalOptions="EndAndExpand" RingBaseColor="#E7E7E6" />
                                     </StackLayout>
                                     <StackLayout Orientation="Horizontal">
                                         <Label TextColor="#e7e7e6" FontSize="Body" FontAttributes="Bold"
                                                Text="Defense">
                                         </Label>
                                         <plugin:ProgressRing HeightRequest="25" RingProgressColor="#c73648"
-                                                             WidthRequest="25" RingThickness="5" Progress="{Binding Defense}" HorizontalOptions="EndAndExpand" RingBaseColor="#E7E7E6" />
+                                                             WidthRequest="25" RingThickness="5"
+                                                             Progress="{Binding Defense}"
+                                                             HorizontalOptions="EndAndExpand" RingBaseColor="#E7E7E6" />
                                     </StackLayout>
                                     <StackLayout Orientation="Horizontal">
                                         <Label TextColor="#e7e7e6" FontSize="Body" FontAttributes="Bold"
                                                Text="Special Attack">
                                         </Label>
                                         <plugin:ProgressRing HeightRequest="25" RingProgressColor="#c73648"
-                                                             WidthRequest="25" RingThickness="5" Progress="{Binding SpecialAttack}" HorizontalOptions="EndAndExpand" RingBaseColor="#E7E7E6" />
+                                                             WidthRequest="25" RingThickness="5"
+                                                             Progress="{Binding SpecialAttack}"
+                                                             HorizontalOptions="EndAndExpand" RingBaseColor="#E7E7E6" />
                                     </StackLayout>
                                     <StackLayout Orientation="Horizontal">
                                         <Label TextColor="#e7e7e6" FontSize="Body" FontAttributes="Bold"
                                                Text="Special Defense">
                                         </Label>
                                         <plugin:ProgressRing HeightRequest="25" RingProgressColor="#c73648"
-                                                             WidthRequest="25" RingThickness="5" Progress="{Binding SpecialDefense}" HorizontalOptions="EndAndExpand" RingBaseColor="#E7E7E6" />
+                                                             WidthRequest="25" RingThickness="5"
+                                                             Progress="{Binding SpecialDefense}"
+                                                             HorizontalOptions="EndAndExpand" RingBaseColor="#E7E7E6" />
                                     </StackLayout>
                                     <StackLayout Orientation="Horizontal">
                                         <Label TextColor="#e7e7e6" FontSize="Body" FontAttributes="Bold"
                                                Text=" Speed">
                                         </Label>
                                         <plugin:ProgressRing HeightRequest="25" RingProgressColor="#c73648"
-                                                             WidthRequest="25" RingThickness="5" Progress="{Binding Speed}" HorizontalOptions="EndAndExpand" RingBaseColor="#E7E7E6" />
+                                                             WidthRequest="25" RingThickness="5"
+                                                             Progress="{Binding Speed}"
+                                                             HorizontalOptions="EndAndExpand" RingBaseColor="#E7E7E6" />
                                     </StackLayout>
                                 </StackLayout>
                             </Frame>
                         </StackLayout>
-                        <Button Text="Add to your team" BackgroundColor="#c73648" 
-                                HeightRequest="50" WidthRequest="100" Clicked="AddToTeamButtonClicked"></Button>
+                        <Button
+                            TextColor="#FFFFFF"
+                            Text="Add to your team" BackgroundColor="#c73648"
+                            HeightRequest="50" WidthRequest="100" Clicked="AddToTeamButtonClicked"
+                            CornerRadius="25">
+                        </Button>
                     </StackLayout>
                 </Frame>
             </ScrollView>
