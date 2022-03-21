@@ -27,39 +27,74 @@ namespace PokeDiaApp
         //Finally redirect to an other add page
         private async void AddButtonClicked(object sender, EventArgs e)
         {
-            Pokemon pokemon = new Pokemon();
-            pokemon.Name = Name.Text;
-            pokemon.Type1 = FirstType.SelectedItem.ToString();
-            pokemon.colorType1 = ColorType.ColorDictionary[pokemon.Type1.ToLower()];
-            pokemon.Description = Description.Text;
-            pokemon.Height = Convert.ToDouble(Height.Text) / 10;
-            pokemon.Weight = Convert.ToDouble(Weight.Text);
-            pokemon.HP = Convert.ToDouble(HP.Text) / 255;
-            pokemon.Attack = Convert.ToDouble(Attack.Text) / 255;
-            pokemon.Defense = Convert.ToDouble(Defense.Text) / 255;
-            pokemon.SpecialAttack = Convert.ToDouble(SpecialAttack.Text) / 255;
-            pokemon.SpecialDefense = Convert.ToDouble(SpecialDefense.Text) / 255;
-            pokemon.Speed = Convert.ToDouble(Speed.Text) / 255;
-            pokemon.UrlFront = FrontDefault.Text;
-            pokemon.UrlBack = BackDefault.Text;
-            pokemon.UrlShinyFront = FrontShiny.Text;
-            pokemon.UrlShinyBack = BackShiny.Text;
-            if (SecondType.SelectedItem != null) {
-                pokemon.Type2 = SecondType.SelectedItem.ToString();
-                pokemon.Type2IsVisible = true;
-                pokemon.colorType2 = ColorType.ColorDictionary[pokemon.Type2.ToLower()];
+            if (Convert.ToDouble(HP.Text) > 255) {
+                await DisplayAlert("Add", "The hp of pokemon can't be higher than 255", "OK");
             }
+            else {
+                if (Convert.ToDouble(Attack.Text) > 255) {
+                    await DisplayAlert("Add", "The attack of pokemon can't be higher than 255", "OK");
+                }
+                else {
+                     if (Convert.ToDouble(Defense.Text) > 255) {
+                        await DisplayAlert("Add", "The defense of pokemon can't be higher than 255", "OK");
+                    }
+                    else {
+                         if (Convert.ToDouble(SpecialAttack.Text) > 255) {
+                            await DisplayAlert("Add", "The special attack of pokemon can't be higher than 255", "OK");
+                        }
+                         else {
+                            if (Convert.ToDouble(SpecialDefense.Text) > 255) {
+                                await DisplayAlert("Add", "The special defense of pokemon can't be higher than 255", "OK");
+                            } 
+                            else {
+                                if (Convert.ToDouble(Speed.Text) > 255) {
+                                    await DisplayAlert("Add", "The speed of pokemon can't be higher than 255", "OK");
+                                }
+                                else {
+                                    Pokemon pokemon = new Pokemon();
+                                    pokemon.Name = Name.Text;
+                                    pokemon.Type1 = FirstType.SelectedItem.ToString();
+                                    pokemon.colorType1 = ColorType.ColorDictionary[pokemon.Type1.ToLower()];
+                                    pokemon.Description = Description.Text;
+                                    pokemon.Height = Convert.ToDouble(Height.Text) / 10;
+                                    pokemon.Weight = Convert.ToDouble(Weight.Text);
+                                    pokemon.HP = Convert.ToDouble(HP.Text) / 255;
+                                    pokemon.Attack = Convert.ToDouble(Attack.Text) / 255;
+                                    pokemon.Defense = Convert.ToDouble(Defense.Text) / 255;
+                                    pokemon.SpecialAttack = Convert.ToDouble(SpecialAttack.Text) / 255;
+                                    pokemon.SpecialDefense = Convert.ToDouble(SpecialDefense.Text) / 255;
+                                    pokemon.Speed = Convert.ToDouble(Speed.Text) / 255;
+                                    pokemon.UrlFront = FrontDefault.Text;
+                                    pokemon.UrlBack = BackDefault.Text;
+                                    pokemon.UrlShinyFront = FrontShiny.Text;
+                                    pokemon.UrlShinyBack = BackShiny.Text;
+                                    if (SecondType.SelectedItem != null) {
+                                        pokemon.Type2 = SecondType.SelectedItem.ToString();
+                                        pokemon.Type2IsVisible = true;
+                                        pokemon.colorType2 = ColorType.ColorDictionary[pokemon.Type2.ToLower()];
+                                    }
 
-            await App.PokemonRepo.AddPokemon(pokemon);
-            List<Pokemon> pokemons_bd = await App.PokemonRepo.GetAll();
-            ListViewModel.Instance.MyList.Clear();
-            int i = 0;
-            foreach (var poke in pokemons_bd) {
-                ListViewModel.Instance.MyList.Insert(0, poke);
+                                    await App.PokemonRepo.AddPokemon(pokemon);
+                                    List<Pokemon> pokemons_bd = await App.PokemonRepo.GetAll();
+                                    ListViewModel.Instance.MyList.Clear();
+                                    int i = 0;
+                                    foreach (var poke in pokemons_bd) {
+                                        ListViewModel.Instance.MyList.Insert(0, poke);
+                                    }
+
+                                    await Navigation.PushAsync(new AddPage());
+                                    await DisplayAlert("Add", App.PokemonRepo.MessageToShow, "OK");
+                                }
+                            }
+                        }
+                    }
+                }
             }
-
-            await Navigation.PushAsync(new AddPage());
-            await DisplayAlert("Add", App.PokemonRepo.MessageToShow, "OK");
+           
+           
+           
+           
+            
         }
 
         //this four methods verify that we can acces to the photos of the phone
